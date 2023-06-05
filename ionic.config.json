@@ -1,0 +1,8 @@
+{
+  "name": "BibleAudio",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "6f2ee9bf"
+}

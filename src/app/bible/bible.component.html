@@ -1,0 +1,22 @@
+<ion-content>
+  <div>
+    <ion-button (click)="downloadBible()">Baixar Bíblia em Áudio</ion-button>
+  </div>
+  <ion-accordion-group>
+    <ion-accordion *ngFor="let book of books" [value]="book.title">
+      <ion-item slot="header" color="light">
+        <ion-label>{{book.title}}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="2" *ngFor="let chapter of book.chapters" class="chapter" (click)="selectChapter(book, chapter)">{{chapter}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+</ion-content>
+<ion-footer>
+  <app-audio-controls class="audio-controls" [active]="smartAudio.active" (toggle)="toggle()" (prev)="prev()" (next)="next()"></app-audio-controls>
+</ion-footer>

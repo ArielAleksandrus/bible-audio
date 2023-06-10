@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">BibleAudio</string>
+    <string name="title_activity_main">BibleAudio</string>
+    <string name="package_name">live.nlabs.bible</string>
+    <string name="custom_url_scheme">live.nlabs.bible</string>
+</resources>

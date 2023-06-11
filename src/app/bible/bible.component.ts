@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { Book } from '../shared/models/book';
 import { BibleBooks } from '../shared/constants/bible-books';
 
@@ -7,14 +7,22 @@ import { SmartAudioService } from '../shared/services/smart-audio.service';
 import { DownloaderService } from '../shared/services/downloader.service';
 import { BibleDownloadHelper } from '../shared/helpers/bible-download-helper';
 
+import { Plan } from '../shared/models/plan';
 import { SoundEl } from '../audio-controls/sound-el';
 
 import { File } from '@awesome-cordova-plugins/file/ngx';
 import { HTTP } from '@awesome-cordova-plugins/http/ngx';
 import { HttpClient } from '@angular/common/http';
-import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions/ngx';
 
 import { environment } from '../../environments/environment';
+
+export interface BibleChapter {
+  book: Book,
+  chapter: number,
+  id: string,
+  folder: string,
+  filename: string
+};
 
 @Component({
   selector: 'app-bible',
@@ -23,15 +31,13 @@ import { environment } from '../../environments/environment';
 
 })
 export class BibleComponent  implements OnInit {
+  @Input() mode: 'selection'|'play' = 'play';
+  @Input() plan?: Plan;
   books: Book[] = [];
+  bibleHelper: BibleDownloadHelper;
 
-  chapterSelected: {
-    book: Book,
-    chapter: number,
-    id: string,
-    folder: string,
-    filename: string
-  }|null = null;
+  chapterSelected: BibleChapter|null = null;
+  chaptersList: BibleChapter[] = [];
 
   deviceType: 'native'|'html' = 'html';
 
@@ -40,38 +46,31 @@ export class BibleComponent  implements OnInit {
               private http: HTTP,
               private httpCli: HttpClient,
               private platform: Platform,
-              private downloader: DownloaderService,
-              private aPerm: AndroidPermissions) {
+              private downloader: DownloaderService) {
 
+    this.bibleHelper = new BibleDownloadHelper(file, downloader);
     if(platform.is('cordova')){
       this.deviceType = 'native';
     }
   }
 
-  checkPermission() {
-    this.aPerm.checkPermission(this.aPerm.PERMISSION.WRITE_EXTERNAL_STORAGE).then(
-      res => {
-        if(!res.hasPermission)
-          return this.askStoragePermission();
-      },
-      err => {
-        return this.askStoragePermission();
-      }
-    );
-  }
-  askStoragePermission() {
-    this.aPerm.requestPermissions([this.aPerm.PERMISSION.READ_EXTERNAL_STORAGE, this.aPerm.PERMISSION.WRITE_EXTERNAL_STORAGE]).then(
-      res => {
-        console.log("Permission: ", res);
-      },
-      err => {
-        console.error("Permission: ", err);
-      }
-    );
-  }
-
   ngOnInit() {
     this._loadBooksInfo();
+    if(this.mode == 'selection') {
+      this.bibleHelper.buildAll();
+    } else {
+      this.bibleHelper.checkAll().then(res => {
+        
+      }).catch(err => {console.log("Helper error", err)});
+    }
+  }
+
+  clickedChapter(book: Book, chapter: number) {
+    if(this.mode == 'selection') {
+      this.toggleChapter(book, chapter);
+    } else {
+      this.selectChapter(book, chapter);
+    }
   }
 
   selectChapter(book: Book, chapter: number) {
@@ -196,9 +195,26 @@ export class BibleComponent  implements OnInit {
     }*/
     this._downloadBibleNative();
   }
+  toggleChapter(book: Book, chapter: number) {
+    let idx = this.books.indexOf(book);
+    let chap = this.chaptersList.find(el => el.book == book && el.chapter == chapter);
+    if(chap) {
+      this.chaptersList.splice(this.chaptersList.indexOf(chap), 1);
+    } else {
+      let id = `${book.title}${chapter}`;
+      this.chaptersList.push({
+        book: book,
+        chapter: chapter,
+        id: id,
+        folder: `${this.file.externalApplicationStorageDirectory}${book.title}`,
+        filename: `${book.title} ${chapter}.mp3`
+      });
+    }
+
+    this.bibleHelper.existing[idx].chapters[chapter - 1].found = !this.bibleHelper.existing[idx].chapters[chapter - 1].found;
+  }
   private _downloadBibleNative() {
-    let helper = new BibleDownloadHelper(this.file, this.downloader);
-    helper.checkDownloaded();
+    this.bibleHelper.downloadAll();
   }
 
   private _loadBooksInfo() {

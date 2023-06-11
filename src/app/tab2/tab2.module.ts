@@ -7,13 +7,18 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 
+//import { BibleModule } from '../bible/bible.module';
+import { PlansModule } from '../plans/plans.module';
+
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab2PageRoutingModule
+    Tab2PageRoutingModule,
+    //BibleModule,
+    PlansModule
   ],
   declarations: [Tab2Page]
 })

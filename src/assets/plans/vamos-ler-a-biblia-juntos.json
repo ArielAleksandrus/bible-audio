@@ -1,0 +1,3072 @@
+{
+    "id": 1,
+    "name": "Vamos ler a Bíblia juntos",
+    "author": "Youversion",
+    "days": 365,
+    "parts": [{
+        "name": "Janeiro",
+        "days": [
+            {
+                "day": 1,
+                "chapters": [
+                    "Lucas 1",
+                    "Lucas 2",
+                    "Daniel 1"
+                ]
+            },
+            {
+                "day": 2,
+                "chapters": [
+                    "Lucas 3",
+                    "Lucas 4",
+                    "Daniel 2"
+                ]
+            },
+            {
+                "day": 3,
+                "chapters": [
+                    "Lucas 5",
+                    "Lucas 6",
+                    "Daniel 3"
+                ]
+            },
+            {
+                "day": 4,
+                "chapters": [
+                    "Lucas 7",
+                    "Lucas 8",
+                    "Salmos 19"
+                ]
+            },
+            {
+                "day": 5,
+                "chapters": [
+                    "Lucas 9",
+                    "Lucas 10",
+                    "Daniel 4"
+                ]
+            },
+            {
+                "day": 6,
+                "chapters": [
+                    "Lucas 11",
+                    "Lucas 12",
+                    "Daniel 5"
+                ]
+            },
+            {
+                "day": 7,
+                "chapters": [
+                    "Lucas 13",
+                    "Lucas 14",
+                    "Daniel 6"
+                ]
+            },
+            {
+                "day": 8,
+                "chapters": [
+                    "Lucas 15",
+                    "Lucas 16",
+                    "Daniel 7",
+                    "Daniel 8"
+                ]
+            },
+            {
+                "day": 9,
+                "chapters": [
+                    "Lucas 17",
+                    "Lucas 18",
+                    "Daniel 9"
+                ]
+            },
+            {
+                "day": 10,
+                "chapters": [
+                    "Lucas 19",
+                    "Lucas 20",
+                    "Daniel 10"
+                ]
+            },
+            {
+                "day": 11,
+                "chapters": [
+                    "Lucas 21",
+                    "Lucas 22",
+                    "Daniel 11"
+                ]
+            },
+            {
+                "day": 12,
+                "chapters": [
+                    "Lucas 23",
+                    "Lucas 24",
+                    "Daniel 12",
+                    "Gênesis 1"
+                ]
+            },
+            {
+                "day": 13,
+                "chapters": [
+                    "Atos 1",
+                    "Atos 2",
+                    "Gênesis 2",
+                    "Gênesis 3"
+                ]
+            },
+            {
+                "day": 14,
+                "chapters": [
+                    "Atos 3",
+                    "Atos 4",
+                    "Gênesis 4",
+                    "Gênesis 5"
+                ]
+            },
+            {
+                "day": 15,
+                "chapters": [
+                    "Atos 5",
+                    "Atos 6",
+                    "Gênesis 6",
+                    "Gênesis 7"
+                ]
+            },
+            {
+                "day": 16,
+                "chapters": [
+                    "Atos 7",
+                    "Atos 8",
+                    "Gênesis 8",
+                    "Gênesis 9"
+                ]
+            },
+            {
+                "day": 17,
+                "chapters": [
+                    "Atos 9",
+                    "Atos 10",
+                    "Gênesis 10",
+                    "Gênesis 11"
+                ]
+            },
+            {
+                "day": 18,
+                "chapters": [
+                    "Atos 11",
+                    "Atos 12",
+                    "Gênesis 12",
+                    "Gênesis 13"
+                ]
+            },
+            {
+                "day": 19,
+                "chapters": [
+                    "Atos 13",
+                    "Atos 14",
+                    "Gênesis 14",
+                    "Gênesis 15"
+                ]
+            },
+            {
+                "day": 20,
+                "chapters": [
+                    "Atos 15",
+                    "Atos 16",
+                    "Gênesis 16",
+                    "Gênesis 17"
+                ]
+            },
+            {
+                "day": 21,
+                "chapters": [
+                    "Atos 17",
+                    "Atos 18",
+                    "Gênesis 18",
+                    "Gênesis 19"
+                ]
+            },
+            {
+                "day": 22,
+                "chapters": [
+                    "Atos 19",
+                    "Atos 20",
+                    "Gênesis 20",
+                    "Gênesis 21"
+                ]
+            },
+            {
+                "day": 23,
+                "chapters": [
+                    "Atos 21",
+                    "Atos 22",
+                    "Gênesis 22",
+                    "Gênesis 23"
+                ]
+            },
+            {
+                "day": 24,
+                "chapters": [
+                    "Atos 23",
+                    "Atos 24",
+                    "Gênesis 24"
+                ]
+            },
+            {
+                "day": 25,
+                "chapters": [
+                    "Atos 25",
+                    "Atos 26",
+                    "Gênesis 25"
+                ]
+            },
+            {
+                "day": 26,
+                "chapters": [
+                    "Atos 27",
+                    "Atos 28",
+                    "Gênesis 26"
+                ]
+            },
+            {
+                "day": 27,
+                "chapters": [
+                    "Gênesis 27",
+                    "Gênesis 28",
+                    "Gênesis 29"
+                ]
+            },
+            {
+                "day": 28,
+                "chapters": [
+                    "Gênesis 30",
+                    "Gênesis 31",
+                    "Gênesis 32"
+                ]
+            },
+            {
+                "day": 29,
+                "chapters": [
+                    "Salmos 121",
+                    "Salmos 122",
+                    "Gênesis 33"
+                ]
+            },
+            {
+                "day": 30,
+                "chapters": [
+                    "Salmos 123",
+                    "Salmos 124",
+                    "Gênesis 34"
+                ]
+            },
+            {
+                "day": 31,
+                "chapters": [
+                    "Salmos 130",
+                    "Gênesis 35",
+                    "Salmos 1"
+                ]
+            }
+        ]
+    },{
+        "name": "Fevereiro",
+        "days": [
+            {
+                "day": 1,
+                "chapters": [
+                    "Gênesis 36",
+                    "Gênesis 37",
+                    "Gênesis 38",
+                    "Gênesis 39"
+                ]
+            },
+            {
+                "day": 2,
+                "chapters": [
+                    "Gênesis 40",
+                    "Gênesis 41",
+                    "Gênesis 42"
+                ]
+            },
+            {
+                "day": 3,
+                "chapters": [
+                    "Gênesis 43",
+                    "Gênesis 44",
+                    "Gênesis 45",
+                    "Gênesis 46"
+                ]
+            },
+            {
+                "day": 4,
+                "chapters": [
+                    "Gênesis 47",
+                    "Gênesis 48",
+                    "Gênesis 49",
+                    "Gênesis 50"
+                ]
+            },
+            {
+                "day": 5,
+                "chapters": [
+                    "Êxodo 1",
+                    "Êxodo 2",
+                    "Êxodo 3",
+                    "Salmos 42"
+                ]
+            },
+            {
+                "day": 6,
+                "chapters": [
+                    "Êxodo 4",
+                    "Êxodo 5",
+                    "Êxodo 6",
+                    "Salmos 61"
+                ]
+            },
+            {
+                "day": 7,
+                "chapters": [
+                    "Êxodo 7",
+                    "Êxodo 8",
+                    "Êxodo 9"
+                ]
+            },
+            {
+                "day": 8,
+                "chapters": [
+                    "Êxodo 10",
+                    "Êxodo 11",
+                    "Êxodo 12",
+                    "Salmos 67"
+                ]
+            },
+            {
+                "day": 9,
+                "chapters": [
+                    "Êxodo 13",
+                    "Êxodo 14",
+                    "Êxodo 15",
+                    "Salmos 77"
+                ]
+            },
+            {
+                "day": 10,
+                "chapters": [
+                    "Êxodo 16",
+                    "Êxodo 17",
+                    "Êxodo 18",
+                    "Salmos 114"
+                ]
+            },
+            {
+                "day": 11,
+                "chapters": [
+                    "Êxodo 19",
+                    "Êxodo 20",
+                    "Êxodo 21",
+                    "Gálatas 1"
+                ]
+            },
+            {
+                "day": 12,
+                "chapters": [
+                    "Êxodo 22",
+                    "Êxodo 23",
+                    "Êxodo 24",
+                    "Gálatas 2"
+                ]
+            },
+            {
+                "day": 13,
+                "chapters": [
+                    "Êxodo 25",
+                    "Êxodo 26",
+                    "Êxodo 27",
+                    "Gálatas 3"
+                ]
+            },
+            {
+                "day": 14,
+                "chapters": [
+                    "Êxodo 28",
+                    "Êxodo 29",
+                    "Êxodo 30",
+                    "Gálatas 4"
+                ]
+            },
+            {
+                "day": 15,
+                "chapters": [
+                    "Êxodo 31",
+                    "Êxodo 32",
+                    "Êxodo 33",
+                    "Gálatas 5"
+                ]
+            },
+            {
+                "day": 16,
+                "chapters": [
+                    "Êxodo 34",
+                    "Êxodo 35",
+                    "Êxodo 36",
+                    "Gálatas 6"
+                ]
+            },
+            {
+                "day": 17,
+                "chapters": [
+                    "Êxodo 37",
+                    "Êxodo 38",
+                    "Êxodo 39"
+                ]
+            },
+            {
+                "day": 18,
+                "chapters": [
+                    "Êxodo 40",
+                    "Salmos 119"
+                ]
+            },
+            {
+                "day": 19,
+                "chapters": [
+                    "Levítico 1",
+                    "Levítico 2",
+                    "Levítico 3"
+                ]
+            },
+            {
+                "day": 20,
+                "chapters": [
+                    "Levítico 4",
+                    "Levítico 5",
+                    "Levítico 6",
+                    "Salmos 40"
+                ]
+            },
+            {
+                "day": 21,
+                "chapters": [
+                    "Levítico 7",
+                    "Levítico 8",
+                    "Levítico 9",
+                    "Salmos 37"
+                ]
+            },
+            {
+                "day": 22,
+                "chapters": [
+                    "Levítico 10",
+                    "Levítico 11",
+                    "Levítico 12"
+                ]
+            },
+            {
+                "day": 23,
+                "chapters": [
+                    "Levítico 13",
+                    "Levítico 14",
+                    "Levítico 15"
+                ]
+            },
+            {
+                "day": 24,
+                "chapters": [
+                    "Levítico 16",
+                    "Levítico 17",
+                    "Levítico 18"
+                ]
+            },
+            {
+                "day": 25,
+                "chapters": [
+                    "Levítico 19",
+                    "Levítico 20",
+                    "Levítico 21"
+                ]
+            },
+            {
+                "day": 26,
+                "chapters": [
+                    "Levítico 22",
+                    "Levítico 23",
+                    "Salmos 92"
+                ]
+            },
+            {
+                "day": 27,
+                "chapters": [
+                    "Levítico 24",
+                    "Levítico 25",
+                    "Salmos 78",
+                    "Salmos 33"
+                ]
+            },
+            {
+                "day": 28,
+                "chapters": [
+                    "Levítico 26",
+                    "Levítico 27",
+                    "Salmos 100"
+                ]
+            }
+        ]
+    },{
+        "name": "Março",
+        "days": [
+            {
+                "day": 1,
+                "chapters": [
+                    "Provérbios 1",
+                    "Romanos 1",
+                    "Romanos 2"
+                ]
+            },
+            {
+                "day": 2,
+                "chapters": [
+                    "Provérbios 2",
+                    "Romanos 3",
+                    "Romanos 4",
+                    "Salmos 32"
+                ]
+            },
+            {
+                "day": 3,
+                "chapters": [
+                    "Provérbios 3",
+                    "Romanos 5",
+                    "Romanos 6"
+                ]
+            },
+            {
+                "day": 4,
+                "chapters": [
+                    "Provérbios 4",
+                    "Romanos 7",
+                    "Romanos 8"
+                ]
+            },
+            {
+                "day": 5,
+                "chapters": [
+                    "Provérbios 5",
+                    "Romanos 9",
+                    "Romanos 10"
+                ]
+            },
+            {
+                "day": 6,
+                "chapters": [
+                    "Provérbios 6",
+                    "Romanos 11",
+                    "Romanos 12",
+                    "Salmos 69"
+                ]
+            },
+            {
+                "day": 7,
+                "chapters": [
+                    "Provérbios 7",
+                    "Romanos 13",
+                    "Romanos 14",
+                    "Salmos 24"
+                ]
+            },
+            {
+                "day": 8,
+                "chapters": [
+                    "Provérbios 8",
+                    "Romanos 15",
+                    "Romanos 16",
+                    "Salmos 117"
+                ]
+            },
+            {
+                "day": 9,
+                "chapters": [
+                    "Provérbios 9",
+                    "Números 1",
+                    "Números 2"
+                ]
+            },
+            {
+                "day": 10,
+                "chapters": [
+                    "Provérbios 10",
+                    "Números 3",
+                    "Números 4"
+                ]
+            },
+            {
+                "day": 11,
+                "chapters": [
+                    "Provérbios 11",
+                    "Números 5",
+                    "Números 6"
+                ]
+            },
+            {
+                "day": 12,
+                "chapters": [
+                    "Provérbios 12",
+                    "Números 7",
+                    "Números 8"
+                ]
+            },
+            {
+                "day": 13,
+                "chapters": [
+                    "Provérbios 13",
+                    "Números 9",
+                    "Números 10"
+                ]
+            },
+            {
+                "day": 14,
+                "chapters": [
+                    "Provérbios 14",
+                    "Números 11",
+                    "Números 12"
+                ]
+            },
+            {
+                "day": 15,
+                "chapters": [
+                    "Provérbios 15",
+                    "Números 13",
+                    "Números 14"
+                ]
+            },
+            {
+                "day": 16,
+                "chapters": [
+                    "Provérbios 16",
+                    "Números 15",
+                    "Números 16"
+                ]
+            },
+            {
+                "day": 17,
+                "chapters": [
+                    "Provérbios 17",
+                    "Números 17",
+                    "Números 18"
+                ]
+            },
+            {
+                "day": 18,
+                "chapters": [
+                    "Provérbios 18",
+                    "Números 19",
+                    "Números 20"
+                ]
+            },
+            {
+                "day": 19,
+                "chapters": [
+                    "Provérbios 19",
+                    "Números 21",
+                    "Números 22"
+                ]
+            },
+            {
+                "day": 20,
+                "chapters": [
+                    "Provérbios 20",
+                    "Números 23",
+                    "Números 24"
+                ]
+            },
+            {
+                "day": 21,
+                "chapters": [
+                    "Provérbios 21",
+                    "Números 25",
+                    "Números 26"
+                ]
+            },
+            {
+                "day": 22,
+                "chapters": [
+                    "Provérbios 22",
+                    "Números 27",
+                    "Números 28"
+                ]
+            },
+            {
+                "day": 23,
+                "chapters": [
+                    "Provérbios 23",
+                    "Números 29",
+                    "Números 30"
+                ]
+            },
+            {
+                "day": 24,
+                "chapters": [
+                    "Provérbios 24",
+                    "Números 31",
+                    "Números 32"
+                ]
+            },
+            {
+                "day": 25,
+                "chapters": [
+                    "Provérbios 25",
+                    "Números 33",
+                    "Números 34"
+                ]
+            },
+            {
+                "day": 26,
+                "chapters": [
+                    "Provérbios 26",
+                    "Números 35",
+                    "Números 36"
+                ]
+            },
+            {
+                "day": 27,
+                "chapters": [
+                    "Provérbios 27",
+                    "Hebreus 1",
+                    "Hebreus 2"
+                ]
+            },
+            {
+                "day": 28,
+                "chapters": [
+                    "Provérbios 28",
+                    "Hebreus 3",
+                    "Hebreus 4",
+                    "Salmos 95"
+                ]
+            },
+            {
+                "day": 29,
+                "chapters": [
+                    "Provérbios 29",
+                    "Hebreus 5",
+                    "Hebreus 6",
+                    "Hebreus 7"
+                ]
+            },
+            {
+                "day": 30,
+                "chapters": [
+                    "Provérbios 30",
+                    "Hebreus 8",
+                    "Hebreus 9",
+                    "Hebreus 10"
+                ]
+            },
+            {
+                "day": 31,
+                "chapters": [
+                    "Provérbios 31",
+                    "Hebreus 11",
+                    "Hebreus 12",
+                    "Hebreus 13"
+                ]
+            }
+        ]
+    },{
+        "name": "Abril",
+        "days": [
+            {
+                "day": 1,
+                "chapters": [
+                    "Mateus 1",
+                    "Mateus 2",
+                    "Jó 1"
+                ]
+            },
+            {
+                "day": 2,
+                "chapters": [
+                    "Mateus 3",
+                    "Salmos 2",
+                    "Jó 2"
+                ]
+            },
+            {
+                "day": 3,
+                "chapters": [
+                    "Mateus 4",
+                    "Mateus 5",
+                    "Jó 3"
+                ]
+            },
+            {
+                "day": 4,
+                "chapters": [
+                    "Mateus 6",
+                    "Mateus 7",
+                    "Jó 4"
+                ]
+            },
+            {
+                "day": 5,
+                "chapters": [
+                    "Mateus 8",
+                    "Mateus 9",
+                    "Jó 5"
+                ]
+            },
+            {
+                "day": 6,
+                "chapters": [
+                    "Mateus 10",
+                    "Mateus 11",
+                    "Jó 6"
+                ]
+            },
+            {
+                "day": 7,
+                "chapters": [
+                    "Mateus 12",
+                    "Salmos 16",
+                    "Jó 7"
+                ]
+            },
+            {
+                "day": 8,
+                "chapters": [
+                    "Mateus 13",
+                    "Salmos 91",
+                    "Jó 8"
+                ]
+            },
+            {
+                "day": 9,
+                "chapters": [
+                    "Mateus 14",
+                    "Mateus 15",
+                    "Jó 9"
+                ]
+            },
+            {
+                "day": 10,
+                "chapters": [
+                    "Mateus 16",
+                    "Mateus 17",
+                    "Jó 10"
+                ]
+            },
+            {
+                "day": 11,
+                "chapters": [
+                    "Mateus 18",
+                    "Mateus 19",
+                    "Jó 11"
+                ]
+            },
+            {
+                "day": 12,
+                "chapters": [
+                    "Mateus 20",
+                    "Salmos 56",
+                    "Jó 12"
+                ]
+            },
+            {
+                "day": 13,
+                "chapters": [
+                    "Mateus 21",
+                    "Salmos 8",
+                    "Jó 13"
+                ]
+            },
+            {
+                "day": 14,
+                "chapters": [
+                    "Mateus 22",
+                    "Salmos 35",
+                    "Jó 14"
+                ]
+            },
+            {
+                "day": 15,
+                "chapters": [
+                    "Mateus 23",
+                    "Salmos 118",
+                    "Jó 15"
+                ]
+            },
+            {
+                "day": 16,
+                "chapters": [
+                    "Mateus 24",
+                    "Salmos 41",
+                    "Jó 16"
+                ]
+            },
+            {
+                "day": 17,
+                "chapters": [
+                    "Mateus 25",
+                    "Salmos 34",
+                    "Jó 17"
+                ]
+            },
+            {
+                "day": 18,
+                "chapters": [
+                    "Mateus 26",
+                    "Salmos 22",
+                    "Jó 18"
+                ]
+            },
+            {
+                "day": 19,
+                "chapters": [
+                    "Mateus 27",
+                    "Salmos 109",
+                    "Jó 19"
+                ]
+            },
+            {
+                "day": 20,
+                "chapters": [
+                    "Mateus 28",
+                    "Salmos 110",
+                    "Jó 20"
+                ]
+            },
+            {
+                "day": 21,
+                "chapters": [
+                    "Jó 21",
+                    "Jó 22",
+                    "Jó 23"
+                ]
+            },
+            {
+                "day": 22,
+                "chapters": [
+                    "Jó 24",
+                    "Jó 25",
+                    "Jó 26"
+                ]
+            },
+            {
+                "day": 23,
+                "chapters": [
+                    "Jó 27",
+                    "Jó 28",
+                    "Salmos 135",
+                    "Salmos 136"
+                ]
+            },
+            {
+                "day": 24,
+                "chapters": [
+                    "Jó 29",
+                    "Jó 30",
+                    "Salmos 137",
+                    "Salmos 138"
+                ]
+            },
+            {
+                "day": 25,
+                "chapters": [
+                    "Jó 31",
+                    "Jó 32",
+                    "Salmos 139",
+                    "Salmos 140"
+                ]
+            },
+            {
+                "day": 26,
+                "chapters": [
+                    "Jó 33",
+                    "Jó 34",
+                    "Salmos 141",
+                    "Salmos 142"
+                ]
+            },
+            {
+                "day": 27,
+                "chapters": [
+                    "Jó 35",
+                    "Jó 36",
+                    "Salmos 143",
+                    "Salmos 144"
+                ]
+            },
+            {
+                "day": 28,
+                "chapters": [
+                    "Jó 37",
+                    "Jó 38",
+                    "Salmos 145",
+                    "Salmos 146"
+                ]
+            },
+            {
+                "day": 29,
+                "chapters": [
+                    "Jó 39",
+                    "Jó 40",
+                    "Salmos 147",
+                    "Salmos 148"
+                ]
+            },
+            {
+                "day": 30,
+                "chapters": [
+                    "Jó 41",
+                    "Jó 42",
+                    "Salmos 149",
+                    "Salmos 150"
+                ]
+            }
+        ]
+    },{
+        "name": "Maio",
+        "days": [
+            {
+                "day": 1,
+                "chapters": [
+                    "Deuteronômio 1",
+                    "Deuteronômio 2",
+                    "1Coríntios 1",
+                    "Salmos 112"
+                ]
+            },
+            {
+                "day": 2,
+                "chapters": [
+                    "Deuteronômio 3",
+                    "Deuteronômio 4",
+                    "1Coríntios 2"
+                ]
+            },
+            {
+                "day": 3,
+                "chapters": [
+                    "Deuteronômio 5",
+                    "Deuteronômio 6",
+                    "1Coríntios 3"
+                ]
+            },
+            {
+                "day": 4,
+                "chapters": [
+                    "Deuteronômio 7",
+                    "Deuteronômio 8",
+                    "1Coríntios 4"
+                ]
+            },
+            {
+                "day": 5,
+                "chapters": [
+                    "Deuteronômio 9",
+                    "Deuteronômio 10",
+                    "1Coríntios 5"
+                ]
+            },
+            {
+                "day": 6,
+                "chapters": [
+                    "Deuteronômio 11",
+                    "Deuteronômio 12",
+                    "1Coríntios 6"
+                ]
+            },
+            {
+                "day": 7,
+                "chapters": [
+                    "Deuteronômio 13",
+                    "Deuteronômio 14",
+                    "1Coríntios 7"
+                ]
+            },
+            {
+                "day": 8,
+                "chapters": [
+                    "Deuteronômio 15",
+                    "Deuteronômio 16",
+                    "1Coríntios 8"
+                ]
+            },
+            {
+                "day": 9,
+                "chapters": [
+                    "Deuteronômio 17",
+                    "Deuteronômio 18",
+                    "1Coríntios 9"
+                ]
+            },
+            {
+                "day": 10,
+                "chapters": [
+                    "Deuteronômio 19",
+                    "Deuteronômio 20",
+                    "1Coríntios 10"
+                ]
+            },
+            {
+                "day": 11,
+                "chapters": [
+                    "Deuteronômio 21",
+                    "Deuteronômio 22",
+                    "1Coríntios 11"
+                ]
+            },
+            {
+                "day": 12,
+                "chapters": [
+                    "Deuteronômio 23",
+                    "Deuteronômio 24",
+                    "1Coríntios 12"
+                ]
+            },
+            {
+                "day": 13,
+                "chapters": [
+                    "Deuteronômio 25",
+                    "Deuteronômio 26",
+                    "1Coríntios 13"
+                ]
+            },
+            {
+                "day": 14,
+                "chapters": [
+                    "Deuteronômio 27",
+                    "Deuteronômio 28",
+                    "1Coríntios 14"
+                ]
+            },
+            {
+                "day": 15,
+                "chapters": [
+                    "Deuteronômio 29",
+                    "Deuteronômio 30",
+                    "1Coríntios 15"
+                ]
+            },
+            {
+                "day": 16,
+                "chapters": [
+                    "Deuteronômio 31",
+                    "Deuteronômio 32",
+                    "1Coríntios 16"
+                ]
+            },
+            {
+                "day": 17,
+                "chapters": [
+                    "Deuteronômio 33",
+                    "Deuteronômio 34",
+                    "Salmos 89",
+                    "Salmos 102",
+                    "Salmos 103"
+                ]
+            },
+            {
+                "day": 18,
+                "chapters": [
+                    "Salmos 104",
+                    "Salmos 105",
+                    "Salmos 106",
+                    "Salmos 107",
+                    "Salmos 108"
+                ]
+            },
+            {
+                "day": 19,
+                "chapters": [
+                    "Salmos 68",
+                    "Salmos 31",
+                    "Salmos 111",
+                    "Salmos 113",
+                    "2Coríntios 1"
+                ]
+            },
+            {
+                "day": 20,
+                "chapters": [
+                    "Josué 1",
+                    "Josué 2",
+                    "2Coríntios 2"
+                ]
+            },
+            {
+                "day": 21,
+                "chapters": [
+                    "Josué 3",
+                    "Josué 4",
+                    "2Coríntios 3"
+                ]
+            },
+            {
+                "day": 22,
+                "chapters": [
+                    "Josué 5",
+                    "Josué 6",
+                    "2Coríntios 4"
+                ]
+            },
+            {
+                "day": 23,
+                "chapters": [
+                    "Josué 7",
+                    "Josué 8",
+                    "2Coríntios 5"
+                ]
+            },
+            {
+                "day": 24,
+                "chapters": [
+                    "Josué 9",
+                    "Josué 10",
+                    "2Coríntios 6"
+                ]
+            },
+            {
+                "day": 25,
+                "chapters": [
+                    "Josué 11",
+                    "Josué 12",
+                    "2Coríntios 7"
+                ]
+            },
+            {
+                "day": 26,
+                "chapters": [
+                    "Josué 13",
+                    "Josué 14",
+                    "2Coríntios 8"
+                ]
+            },
+            {
+                "day": 27,
+                "chapters": [
+                    "Josué 15",
+                    "Josué 16",
+                    "2Coríntios 9"
+                ]
+            },
+            {
+                "day": 28,
+                "chapters": [
+                    "Josué 17",
+                    "Josué 18",
+                    "2Coríntios 10"
+                ]
+            },
+            {
+                "day": 29,
+                "chapters": [
+                    "Josué 19",
+                    "Josué 20",
+                    "2Coríntios 11"
+                ]
+            },
+            {
+                "day": 30,
+                "chapters": [
+                    "Josué 21",
+                    "Josué 22",
+                    "2Coríntios 12"
+                ]
+            },
+            {
+                "day": 31,
+                "chapters": [
+                    "Josué 23",
+                    "Josué 24",
+                    "2Coríntios 13"
+                ]
+            }
+        ]
+    },{
+        "name": "Junho",
+        "days": [
+            {
+                "day": 1,
+                "chapters": [
+                    "Juízes 1",
+                    "Juízes 2",
+                    "Efésios 1"
+                ]
+            },
+            {
+                "day": 2,
+                "chapters": [
+                    "Juízes 3",
+                    "Juízes 4",
+                    "Efésios 2"
+                ]
+            },
+            {
+                "day": 3,
+                "chapters": [
+                    "Juízes 5",
+                    "Juízes 6",
+                    "Efésios 3"
+                ]
+            },
+            {
+                "day": 4,
+                "chapters": [
+                    "Juízes 7",
+                    "Juízes 8",
+                    "Efésios 4"
+                ]
+            },
+            {
+                "day": 5,
+                "chapters": [
+                    "Juízes 9",
+                    "Juízes 10",
+                    "Efésios 5"
+                ]
+            },
+            {
+                "day": 6,
+                "chapters": [
+                    "Juízes 11",
+                    "Juízes 12",
+                    "Efésios 6"
+                ]
+            },
+            {
+                "day": 7,
+                "chapters": [
+                    "Juízes 13",
+                    "Juízes 14",
+                    "Salmos 3"
+                ]
+            },
+            {
+                "day": 8,
+                "chapters": [
+                    "Juízes 15",
+                    "Juízes 16",
+                    "Salmos 4"
+                ]
+            },
+            {
+                "day": 9,
+                "chapters": [
+                    "Juízes 17",
+                    "Juízes 18",
+                    "Salmos 5"
+                ]
+            },
+            {
+                "day": 10,
+                "chapters": [
+                    "Juízes 19",
+                    "Juízes 20",
+                    "Salmos 6"
+                ]
+            },
+            {
+                "day": 11,
+                "chapters": [
+                    "Juízes 21",
+                    "Filipenses 1",
+                    "Filipenses 2"
+                ]
+            },
+            {
+                "day": 12,
+                "chapters": [
+                    "Filipenses 3",
+                    "Filipenses 4",
+                    "Rute 1"
+                ]
+            },
+            {
+                "day": 13,
+                "chapters": [
+                    "Rute 2",
+                    "Rute 3",
+                    "Rute 4"
+                ]
+            },
+            {
+                "day": 14,
+                "chapters": [
+                    "1Samuel 1",
+                    "1Samuel 2",
+                    "1Samuel 3"
+                ]
+            },
+            {
+                "day": 15,
+                "chapters": [
+                    "1Samuel 4",
+                    "1Samuel 5",
+                    "1Samuel 6"
+                ]
+            },
+            {
+                "day": 16,
+                "chapters": [
+                    "1Samuel 7",
+                    "1Samuel 8",
+                    "1Samuel 9"
+                ]
+            },
+            {
+                "day": 17,
+                "chapters": [
+                    "1Samuel 10",
+                    "1Samuel 11",
+                    "1Samuel 12"
+                ]
+            },
+            {
+                "day": 18,
+                "chapters": [
+                    "1Samuel 13",
+                    "1Samuel 14",
+                    "1Samuel 15"
+                ]
+            },
+            {
+                "day": 19,
+                "chapters": [
+                    "1Samuel 16",
+                    "1Samuel 17",
+                    "1Samuel 18"
+                ]
+            },
+            {
+                "day": 20,
+                "chapters": [
+                    "1Samuel 19",
+                    "1Samuel 20",
+                    "Salmos 59"
+                ]
+            },
+            {
+                "day": 21,
+                "chapters": [
+                    "1Samuel 21",
+                    "1Samuel 22",
+                    "Salmos 17"
+                ]
+            },
+            {
+                "day": 22,
+                "chapters": [
+                    "Salmos 64",
+                    "Salmos 52",
+                    "1Samuel 23"
+                ]
+            },
+            {
+                "day": 23,
+                "chapters": [
+                    "1Samuel 24",
+                    "Salmos 31",
+                    "Salmos 54"
+                ]
+            },
+            {
+                "day": 24,
+                "chapters": [
+                    "Salmos 57",
+                    "Salmos 58",
+                    "Salmos 63"
+                ]
+            },
+            {
+                "day": 25,
+                "chapters": [
+                    "1Samuel 25",
+                    "1Samuel 26",
+                    "Salmos 7"
+                ]
+            },
+            {
+                "day": 26,
+                "chapters": [
+                    "1Samuel 27",
+                    "1Samuel 28",
+                    "Salmos 9"
+                ]
+            },
+            {
+                "day": 27,
+                "chapters": [
+                    "1Samuel 29",
+                    "1Samuel 30",
+                    "Salmos 10"
+                ]
+            },
+            {
+                "day": 28,
+                "chapters": [
+                    "1Samuel 31",
+                    "Colossenses 1",
+                    "Salmos 11"
+                ]
+            },
+            {
+                "day": 29,
+                "chapters": [
+                    "Colossenses 2",
+                    "Colossenses 3",
+                    "Colossenses 4"
+                ]
+            },
+            {
+                "day": 30,
+                "chapters": [
+                    "Jonas 1",
+                    "Jonas 2",
+                    "Jonas 3",
+                    "Jonas 4"
+                ]
+            }
+        ]
+    },{
+        "name": "Julho",
+        "days": [
+            {
+                "day": 1,
+                "chapters": [
+                    "2Samuel 1",
+                    "2Samuel 2",
+                    "2Samuel 3"
+                ]
+            },
+            {
+                "day": 2,
+                "chapters": [
+                    "2Samuel 4",
+                    "2Samuel 5",
+                    "2Samuel 6"
+                ]
+            },
+            {
+                "day": 3,
+                "chapters": [
+                    "2Samuel 7",
+                    "2Samuel 8",
+                    "2Samuel 9"
+                ]
+            },
+            {
+                "day": 4,
+                "chapters": [
+                    "2Samuel 10",
+                    "Salmos 20",
+                    "Salmos 21"
+                ]
+            },
+            {
+                "day": 5,
+                "chapters": [
+                    "2Samuel 11",
+                    "2Samuel 12",
+                    "Salmos 51"
+                ]
+            },
+            {
+                "day": 6,
+                "chapters": [
+                    "2Samuel 13",
+                    "2Samuel 14",
+                    "2Samuel 15"
+                ]
+            },
+            {
+                "day": 7,
+                "chapters": [
+                    "2Samuel 16",
+                    "2Samuel 17",
+                    "Salmos 55"
+                ]
+            },
+            {
+                "day": 8,
+                "chapters": [
+                    "Salmos 62",
+                    "Salmos 70",
+                    "Salmos 71",
+                    "Salmos 43"
+                ]
+            },
+            {
+                "day": 9,
+                "chapters": [
+                    "2Samuel 18",
+                    "2Samuel 19",
+                    "2Samuel 20"
+                ]
+            },
+            {
+                "day": 10,
+                "chapters": [
+                    "2Samuel 21",
+                    "2Samuel 22",
+                    "Salmos 18"
+                ]
+            },
+            {
+                "day": 11,
+                "chapters": [
+                    "2Samuel 23",
+                    "2Samuel 24",
+                    "1Reis 1"
+                ]
+            },
+            {
+                "day": 12,
+                "chapters": [
+                    "1Reis 2",
+                    "1Reis 3",
+                    "1Reis 4"
+                ]
+            },
+            {
+                "day": 13,
+                "chapters": [
+                    "1Reis 5",
+                    "1Reis 6",
+                    "1Reis 7"
+                ]
+            },
+            {
+                "day": 14,
+                "chapters": [
+                    "1Reis 8",
+                    "1Reis 9",
+                    "1Reis 10"
+                ]
+            },
+            {
+                "day": 15,
+                "chapters": [
+                    "1Reis 11",
+                    "1Reis 12",
+                    "1Reis 13"
+                ]
+            },
+            {
+                "day": 16,
+                "chapters": [
+                    "1Reis 14",
+                    "1Reis 15",
+                    "1Reis 16"
+                ]
+            },
+            {
+                "day": 17,
+                "chapters": [
+                    "1Reis 17",
+                    "1Reis 18",
+                    "1Reis 19"
+                ]
+            },
+            {
+                "day": 18,
+                "chapters": [
+                    "1Reis 20",
+                    "1Reis 21",
+                    "1Reis 22"
+                ]
+            },
+            {
+                "day": 19,
+                "chapters": [
+                    "2Reis 1",
+                    "2Reis 2",
+                    "2Reis 3"
+                ]
+            },
+            {
+                "day": 20,
+                "chapters": [
+                    "2Reis 4",
+                    "2Reis 5",
+                    "2Reis 6"
+                ]
+            },
+            {
+                "day": 21,
+                "chapters": [
+                    "2Reis 7",
+                    "2Reis 8",
+                    "2Reis 9"
+                ]
+            },
+            {
+                "day": 22,
+                "chapters": [
+                    "2Reis 10",
+                    "2Reis 11",
+                    "2Reis 12"
+                ]
+            },
+            {
+                "day": 23,
+                "chapters": [
+                    "2Reis 13",
+                    "2Reis 14",
+                    "2Reis 15"
+                ]
+            },
+            {
+                "day": 24,
+                "chapters": [
+                    "2Reis 16",
+                    "2Reis 17",
+                    "2Reis 18"
+                ]
+            },
+            {
+                "day": 25,
+                "chapters": [
+                    "2Reis 19",
+                    "Salmos 44",
+                    "Salmos 75",
+                    "Salmos 76"
+                ]
+            },
+            {
+                "day": 26,
+                "chapters": [
+                    "2Reis 20",
+                    "2Reis 21",
+                    "2Reis 22"
+                ]
+            },
+            {
+                "day": 27,
+                "chapters": [
+                    "2Reis 23",
+                    "2Reis 24",
+                    "2Reis 25"
+                ]
+            },
+            {
+                "day": 28,
+                "chapters": [
+                    "Marcos 1",
+                    "Marcos 2",
+                    "Marcos 3",
+                    "Marcos 4"
+                ]
+            },
+            {
+                "day": 29,
+                "chapters": [
+                    "Marcos 5",
+                    "Marcos 6",
+                    "Marcos 7",
+                    "Marcos 8"
+                ]
+            },
+            {
+                "day": 30,
+                "chapters": [
+                    "Marcos 9",
+                    "Marcos 10",
+                    "Marcos 11",
+                    "Marcos 12"
+                ]
+            },
+            {
+                "day": 31,
+                "chapters": [
+                    "Marcos 13",
+                    "Marcos 14",
+                    "Marcos 15",
+                    "Marcos 16"
+                ]
+            }
+        ]
+    },{
+        "name": "Agosto",
+        "days": [
+            {
+                "day": 1,
+                "chapters": [
+                    "1Crônicas 1",
+                    "1Crônicas 2",
+                    "1Crônicas 3"
+                ]
+            },
+            {
+                "day": 2,
+                "chapters": [
+                    "1Crônicas 4",
+                    "1Crônicas 5",
+                    "1Crônicas 6"
+                ]
+            },
+            {
+                "day": 3,
+                "chapters": [
+                    "1Crônicas 7",
+                    "1Crônicas 8",
+                    "1Crônicas 9"
+                ]
+            },
+            {
+                "day": 4,
+                "chapters": [
+                    "1Crônicas 10",
+                    "1Crônicas 11",
+                    "1Crônicas 12"
+                ]
+            },
+            {
+                "day": 5,
+                "chapters": [
+                    "1Crônicas 13",
+                    "1Crônicas 14",
+                    "1Crônicas 15",
+                    "Salmos 132"
+                ]
+            },
+            {
+                "day": 6,
+                "chapters": [
+                    "1Crônicas 16",
+                    "Salmos 23",
+                    "Salmos 96",
+                    "1Crônicas 17"
+                ]
+            },
+            {
+                "day": 7,
+                "chapters": [
+                    "Salmos 45",
+                    "1Crônicas 18",
+                    "1Crônicas 19",
+                    "1Crônicas 20"
+                ]
+            },
+            {
+                "day": 8,
+                "chapters": [
+                    "1Crônicas 21",
+                    "Salmos 30",
+                    "1Crônicas 22",
+                    "1Crônicas 23"
+                ]
+            },
+            {
+                "day": 9,
+                "chapters": [
+                    "1Crônicas 24",
+                    "1Crônicas 25",
+                    "1Crônicas 26"
+                ]
+            },
+            {
+                "day": 10,
+                "chapters": [
+                    "1Crônicas 27",
+                    "1Crônicas 28",
+                    "Salmos 120",
+                    "Salmos 131",
+                    "Salmos 133",
+                    "Salmos 12"
+                ]
+            },
+            {
+                "day": 11,
+                "chapters": [
+                    "1Crônicas 29",
+                    "Salmos 72",
+                    "2Crônicas 1",
+                    "2Crônicas 2"
+                ]
+            },
+            {
+                "day": 12,
+                "chapters": [
+                    "2Crônicas 3",
+                    "2Crônicas 4",
+                    "2Crônicas 5"
+                ]
+            },
+            {
+                "day": 13,
+                "chapters": [
+                    "2Crônicas 6",
+                    "2Crônicas 7",
+                    "Salmos 97",
+                    "Salmos 98",
+                    "Salmos 99"
+                ]
+            },
+            {
+                "day": 14,
+                "chapters": [
+                    "Salmos 47",
+                    "2Crônicas 8",
+                    "2Crônicas 9"
+                ]
+            },
+            {
+                "day": 15,
+                "chapters": [
+                    "2Crônicas 10",
+                    "2Crônicas 11",
+                    "2Crônicas 12"
+                ]
+            },
+            {
+                "day": 16,
+                "chapters": [
+                    "2Crônicas 13",
+                    "2Crônicas 14",
+                    "2Crônicas 15"
+                ]
+            },
+            {
+                "day": 17,
+                "chapters": [
+                    "2Crônicas 16",
+                    "2Crônicas 17",
+                    "2Crônicas 18"
+                ]
+            },
+            {
+                "day": 18,
+                "chapters": [
+                    "2Crônicas 19",
+                    "Salmos 82",
+                    "2Crônicas 20",
+                    "Salmos 115",
+                    "Salmos 46"
+                ]
+            },
+            {
+                "day": 19,
+                "chapters": [
+                    "2Crônicas 21",
+                    "2Crônicas 22",
+                    "2Crônicas 23"
+                ]
+            },
+            {
+                "day": 20,
+                "chapters": [
+                    "2Crônicas 24",
+                    "2Crônicas 25",
+                    "2Crônicas 26"
+                ]
+            },
+            {
+                "day": 21,
+                "chapters": [
+                    "2Crônicas 27",
+                    "2Crônicas 28",
+                    "2Crônicas 29"
+                ]
+            },
+            {
+                "day": 22,
+                "chapters": [
+                    "2Crônicas 30",
+                    "2Crônicas 31",
+                    "2Crônicas 32"
+                ]
+            },
+            {
+                "day": 23,
+                "chapters": [
+                    "2Crônicas 33",
+                    "2Crônicas 34",
+                    "2Crônicas 35"
+                ]
+            },
+            {
+                "day": 24,
+                "chapters": [
+                    "2Crônicas 36",
+                    "1Tessalonicenses 1",
+                    "1Tessalonicenses 2",
+                    "1Tessalonicenses 3"
+                ]
+            },
+            {
+                "day": 25,
+                "chapters": [
+                    "1Tessalonicenses 4",
+                    "1Tessalonicenses 5",
+                    "2Tessalonicenses 1"
+                ]
+            },
+            {
+                "day": 26,
+                "chapters": [
+                    "2Tessalonicenses 2",
+                    "2Tessalonicenses 3",
+                    "Esdras 1",
+                    "Salmos 126",
+                    "Salmos 85"
+                ]
+            },
+            {
+                "day": 27,
+                "chapters": [
+                    "Esdras 2",
+                    "Esdras 3",
+                    "Salmos 66",
+                    "Salmos 84",
+                    "Salmos 117",
+                    "Salmos 87"
+                ]
+            },
+            {
+                "day": 28,
+                "chapters": [
+                    "Salmos 116",
+                    "Salmos 125",
+                    "Salmos 127",
+                    "Salmos 128",
+                    "Salmos 134"
+                ]
+            },
+            {
+                "day": 29,
+                "chapters": [
+                    "Esdras 4",
+                    "Salmos 129",
+                    "Esdras 5"
+                ]
+            },
+            {
+                "day": 30,
+                "chapters": [
+                    "Esdras 6",
+                    "Salmos 48",
+                    "Salmos 81",
+                    "Esdras 7"
+                ]
+            },
+            {
+                "day": 31,
+                "chapters": [
+                    "Esdras 8",
+                    "Esdras 9",
+                    "Esdras 10"
+                ]
+            }
+        ]
+    },{
+        "name": "Setembro",
+        "days": [
+            {
+                "day": 1,
+                "chapters": [
+                    "Neemias 1",
+                    "Neemias 2",
+                    "Neemias 3"
+                ]
+            },
+            {
+                "day": 2,
+                "chapters": [
+                    "Neemias 4",
+                    "Neemias 5",
+                    "Neemias 6"
+                ]
+            },
+            {
+                "day": 3,
+                "chapters": [
+                    "Neemias 7",
+                    "Neemias 8",
+                    "Neemias 9"
+                ]
+            },
+            {
+                "day": 4,
+                "chapters": [
+                    "Neemias 10",
+                    "Neemias 11",
+                    "Neemias 12"
+                ]
+            },
+            {
+                "day": 5,
+                "chapters": [
+                    "Neemias 13",
+                    "Salmos 13",
+                    "Salmos 14",
+                    "Salmos 15"
+                ]
+            },
+            {
+                "day": 6,
+                "chapters": [
+                    "Ester 1",
+                    "Ester 2",
+                    "Ester 3"
+                ]
+            },
+            {
+                "day": 7,
+                "chapters": [
+                    "Ester 4",
+                    "Ester 5",
+                    "Ester 6"
+                ]
+            },
+            {
+                "day": 8,
+                "chapters": [
+                    "Ester 7",
+                    "Ester 8",
+                    "Ester 9"
+                ]
+            },
+            {
+                "day": 9,
+                "chapters": [
+                    "Ester 10",
+                    "Salmos 25",
+                    "Salmos 26",
+                    "Salmos 27"
+                ]
+            },
+            {
+                "day": 10,
+                "chapters": [
+                    "1Timóteo 1",
+                    "1Timóteo 2",
+                    "1Timóteo 3"
+                ]
+            },
+            {
+                "day": 11,
+                "chapters": [
+                    "1Timóteo 4",
+                    "1Timóteo 5",
+                    "1Timóteo 6"
+                ]
+            },
+            {
+                "day": 12,
+                "chapters": [
+                    "2Timóteo 1",
+                    "2Timóteo 2",
+                    "2Timóteo 3"
+                ]
+            },
+            {
+                "day": 13,
+                "chapters": [
+                    "2Timóteo 4",
+                    "Joel 1",
+                    "Joel 2"
+                ]
+            },
+            {
+                "day": 14,
+                "chapters": [
+                    "Joel 3",
+                    "Amós 1",
+                    "Amós 2"
+                ]
+            },
+            {
+                "day": 15,
+                "chapters": [
+                    "Amós 3",
+                    "Amós 4",
+                    "Amós 5"
+                ]
+            },
+            {
+                "day": 16,
+                "chapters": [
+                    "Amós 6",
+                    "Amós 7",
+                    "Amós 8"
+                ]
+            },
+            {
+                "day": 17,
+                "chapters": [
+                    "Amós 9",
+                    "Obadias 1",
+                    "Salmos 28",
+                    "Salmos 29"
+                ]
+            },
+            {
+                "day": 18,
+                "chapters": [
+                    "Naum 1",
+                    "Naum 2",
+                    "Naum 3"
+                ]
+            },
+            {
+                "day": 19,
+                "chapters": [
+                    "Habacuque 1",
+                    "Habacuque 2",
+                    "Habacuque 3"
+                ]
+            },
+            {
+                "day": 20,
+                "chapters": [
+                    "Sofonias 1",
+                    "Sofonias 2",
+                    "Sofonias 3"
+                ]
+            },
+            {
+                "day": 21,
+                "chapters": [
+                    "Tito 1",
+                    "Tito 2",
+                    "Tito 3"
+                ]
+            },
+            {
+                "day": 22,
+                "chapters": [
+                    "Filemom 1",
+                    "Tiago 1",
+                    "Tiago 2"
+                ]
+            },
+            {
+                "day": 23,
+                "chapters": [
+                    "Tiago 3",
+                    "Tiago 4",
+                    "Tiago 5"
+                ]
+            },
+            {
+                "day": 24,
+                "chapters": [
+                    "Ageu 1",
+                    "Ageu 2",
+                    "Zacarias 1"
+                ]
+            },
+            {
+                "day": 25,
+                "chapters": [
+                    "Zacarias 2",
+                    "Zacarias 3",
+                    "Zacarias 4"
+                ]
+            },
+            {
+                "day": 26,
+                "chapters": [
+                    "Zacarias 5",
+                    "Zacarias 6",
+                    "Zacarias 7"
+                ]
+            },
+            {
+                "day": 27,
+                "chapters": [
+                    "Zacarias 8",
+                    "Zacarias 9",
+                    "Zacarias 10"
+                ]
+            },
+            {
+                "day": 28,
+                "chapters": [
+                    "Zacarias 11",
+                    "Zacarias 12",
+                    "Zacarias 13"
+                ]
+            },
+            {
+                "day": 29,
+                "chapters": [
+                    "Zacarias 14",
+                    "Malaquias 1",
+                    "Malaquias 2"
+                ]
+            },
+            {
+                "day": 30,
+                "chapters": [
+                    "Malaquias 3",
+                    "Malaquias 4",
+                    "Salmos 36"
+                ]
+            }
+        ]
+    },{
+        "name": "Outubro",
+        "days": [
+            {
+                "day": 1,
+                "chapters": [
+                    "Eclesiastes 1",
+                    "Eclesiastes 2",
+                    "Eclesiastes 3"
+                ]
+            },
+            {
+                "day": 2,
+                "chapters": [
+                    "Eclesiastes 4",
+                    "Eclesiastes 5",
+                    "Eclesiastes 6"
+                ]
+            },
+            {
+                "day": 3,
+                "chapters": [
+                    "Eclesiastes 7",
+                    "Eclesiastes 8",
+                    "Eclesiastes 9"
+                ]
+            },
+            {
+                "day": 4,
+                "chapters": [
+                    "Eclesiastes 10",
+                    "Eclesiastes 11",
+                    "Eclesiastes 12"
+                ]
+            },
+            {
+                "day": 5,
+                "chapters": [
+                    "João 1",
+                    "João 2",
+                    "João 3"
+                ]
+            },
+            {
+                "day": 6,
+                "chapters": [
+                    "João 4",
+                    "João 5",
+                    "João 6"
+                ]
+            },
+            {
+                "day": 7,
+                "chapters": [
+                    "João 7",
+                    "João 8",
+                    "João 9"
+                ]
+            },
+            {
+                "day": 8,
+                "chapters": [
+                    "João 10",
+                    "João 11",
+                    "João 12"
+                ]
+            },
+            {
+                "day": 9,
+                "chapters": [
+                    "João 13",
+                    "João 14",
+                    "João 15"
+                ]
+            },
+            {
+                "day": 10,
+                "chapters": [
+                    "João 16",
+                    "João 17",
+                    "João 18"
+                ]
+            },
+            {
+                "day": 11,
+                "chapters": [
+                    "João 19",
+                    "João 20",
+                    "João 21"
+                ]
+            },
+            {
+                "day": 12,
+                "chapters": [
+                    "Jeremias 1",
+                    "Jeremias 2",
+                    "Jeremias 3"
+                ]
+            },
+            {
+                "day": 13,
+                "chapters": [
+                    "Jeremias 4",
+                    "Jeremias 5",
+                    "Jeremias 6"
+                ]
+            },
+            {
+                "day": 14,
+                "chapters": [
+                    "Jeremias 7",
+                    "Jeremias 8",
+                    "Jeremias 9"
+                ]
+            },
+            {
+                "day": 15,
+                "chapters": [
+                    "Jeremias 10",
+                    "Jeremias 11",
+                    "Jeremias 12"
+                ]
+            },
+            {
+                "day": 16,
+                "chapters": [
+                    "Jeremias 13",
+                    "Jeremias 14",
+                    "Jeremias 15"
+                ]
+            },
+            {
+                "day": 17,
+                "chapters": [
+                    "Jeremias 16",
+                    "Jeremias 17",
+                    "Jeremias 18"
+                ]
+            },
+            {
+                "day": 18,
+                "chapters": [
+                    "Jeremias 19",
+                    "Jeremias 20",
+                    "Jeremias 21"
+                ]
+            },
+            {
+                "day": 19,
+                "chapters": [
+                    "Jeremias 22",
+                    "Jeremias 23",
+                    "Jeremias 24"
+                ]
+            },
+            {
+                "day": 20,
+                "chapters": [
+                    "Jeremias 25",
+                    "Jeremias 26",
+                    "Jeremias 27"
+                ]
+            },
+            {
+                "day": 21,
+                "chapters": [
+                    "Jeremias 28",
+                    "Jeremias 29",
+                    "Jeremias 30"
+                ]
+            },
+            {
+                "day": 22,
+                "chapters": [
+                    "Jeremias 31",
+                    "Jeremias 32",
+                    "Jeremias 33"
+                ]
+            },
+            {
+                "day": 23,
+                "chapters": [
+                    "Jeremias 34",
+                    "Jeremias 35",
+                    "Jeremias 36"
+                ]
+            },
+            {
+                "day": 24,
+                "chapters": [
+                    "Jeremias 37",
+                    "Jeremias 38",
+                    "Jeremias 39"
+                ]
+            },
+            {
+                "day": 25,
+                "chapters": [
+                    "Jeremias 40",
+                    "Jeremias 41",
+                    "Jeremias 42"
+                ]
+            },
+            {
+                "day": 26,
+                "chapters": [
+                    "Jeremias 43",
+                    "Jeremias 44",
+                    "Jeremias 45"
+                ]
+            },
+            {
+                "day": 27,
+                "chapters": [
+                    "Jeremias 46",
+                    "Jeremias 47",
+                    "Jeremias 48"
+                ]
+            },
+            {
+                "day": 28,
+                "chapters": [
+                    "Jeremias 49",
+                    "Jeremias 50",
+                    "Jeremias 51"
+                ]
+            },
+            {
+                "day": 29,
+                "chapters": [
+                    "Jeremias 52",
+                    "Lamentações 1",
+                    "Lamentações 2"
+                ]
+            },
+            {
+                "day": 30,
+                "chapters": [
+                    "Lamentações 3",
+                    "Lamentações 4",
+                    "Lamentações 5"
+                ]
+            },
+            {
+                "day": 31,
+                "chapters": [
+                    "Salmos 38",
+                    "Salmos 39",
+                    "Salmos 49",
+                    "Salmos 50"
+                ]
+            }
+        ]
+    },{
+        "name": "Novembro",
+        "days": [
+            {
+                "day": 1,
+                "chapters": [
+                    "Cântico 1",
+                    "Cântico 2",
+                    "Cântico 3"
+                ]
+            },
+            {
+                "day": 2,
+                "chapters": [
+                    "Cântico 4",
+                    "Cântico 5",
+                    "Cântico 6"
+                ]
+            },
+            {
+                "day": 3,
+                "chapters": [
+                    "Cântico 7",
+                    "Cântico 8",
+                    "Salmos 83",
+                    "Salmos 86"
+                ]
+            },
+            {
+                "day": 4,
+                "chapters": [
+                    "Ezequiel 1",
+                    "Ezequiel 2",
+                    "Ezequiel 3"
+                ]
+            },
+            {
+                "day": 5,
+                "chapters": [
+                    "Ezequiel 4",
+                    "Ezequiel 5",
+                    "Ezequiel 6"
+                ]
+            },
+            {
+                "day": 6,
+                "chapters": [
+                    "Ezequiel 7",
+                    "Ezequiel 8",
+                    "Ezequiel 9",
+                    "Salmos 79"
+                ]
+            },
+            {
+                "day": 7,
+                "chapters": [
+                    "Ezequiel 10",
+                    "Ezequiel 11",
+                    "Ezequiel 12"
+                ]
+            },
+            {
+                "day": 8,
+                "chapters": [
+                    "Ezequiel 13",
+                    "Ezequiel 14",
+                    "Ezequiel 15"
+                ]
+            },
+            {
+                "day": 9,
+                "chapters": [
+                    "Ezequiel 16",
+                    "Ezequiel 17",
+                    "Ezequiel 18",
+                    "Salmos 80"
+                ]
+            },
+            {
+                "day": 10,
+                "chapters": [
+                    "Ezequiel 19",
+                    "Ezequiel 20",
+                    "Ezequiel 21"
+                ]
+            },
+            {
+                "day": 11,
+                "chapters": [
+                    "Ezequiel 22",
+                    "Ezequiel 23",
+                    "Ezequiel 24"
+                ]
+            },
+            {
+                "day": 12,
+                "chapters": [
+                    "Ezequiel 25",
+                    "Ezequiel 26",
+                    "Ezequiel 27",
+                    "Salmos 88"
+                ]
+            },
+            {
+                "day": 13,
+                "chapters": [
+                    "Ezequiel 28",
+                    "Ezequiel 29",
+                    "Ezequiel 30"
+                ]
+            },
+            {
+                "day": 14,
+                "chapters": [
+                    "Ezequiel 31",
+                    "Ezequiel 32",
+                    "Ezequiel 33"
+                ]
+            },
+            {
+                "day": 15,
+                "chapters": [
+                    "Ezequiel 34",
+                    "Ezequiel 35",
+                    "Ezequiel 36"
+                ]
+            },
+            {
+                "day": 16,
+                "chapters": [
+                    "Ezequiel 37",
+                    "Ezequiel 38",
+                    "Ezequiel 39",
+                    "Salmos 90"
+                ]
+            },
+            {
+                "day": 17,
+                "chapters": [
+                    "Ezequiel 40",
+                    "Ezequiel 41",
+                    "Ezequiel 42"
+                ]
+            },
+            {
+                "day": 18,
+                "chapters": [
+                    "Ezequiel 43",
+                    "Ezequiel 44",
+                    "Ezequiel 45"
+                ]
+            },
+            {
+                "day": 19,
+                "chapters": [
+                    "Ezequiel 46",
+                    "Ezequiel 47",
+                    "Ezequiel 48"
+                ]
+            },
+            {
+                "day": 20,
+                "chapters": [
+                    "Oseias 1",
+                    "Oseias 2",
+                    "Oseias 3",
+                    "Oseias 4"
+                ]
+            },
+            {
+                "day": 21,
+                "chapters": [
+                    "Oseias 5",
+                    "Oseias 6",
+                    "Oseias 7",
+                    "Oseias 8"
+                ]
+            },
+            {
+                "day": 22,
+                "chapters": [
+                    "Oseias 9",
+                    "Oseias 10",
+                    "Oseias 11",
+                    "Oseias 12"
+                ]
+            },
+            {
+                "day": 23,
+                "chapters": [
+                    "Oseias 13",
+                    "Oseias 14",
+                    "Apocalipse 1"
+                ]
+            },
+            {
+                "day": 24,
+                "chapters": [
+                    "Apocalipse 2",
+                    "Apocalipse 3",
+                    "Apocalipse 4"
+                ]
+            },
+            {
+                "day": 25,
+                "chapters": [
+                    "Apocalipse 5",
+                    "Apocalipse 6",
+                    "Apocalipse 7"
+                ]
+            },
+            {
+                "day": 26,
+                "chapters": [
+                    "Apocalipse 8",
+                    "Apocalipse 9",
+                    "Apocalipse 10"
+                ]
+            },
+            {
+                "day": 27,
+                "chapters": [
+                    "Apocalipse 11",
+                    "Apocalipse 12",
+                    "Apocalipse 13"
+                ]
+            },
+            {
+                "day": 28,
+                "chapters": [
+                    "Apocalipse 14",
+                    "Apocalipse 15",
+                    "Apocalipse 16"
+                ]
+            },
+            {
+                "day": 29,
+                "chapters": [
+                    "Apocalipse 17",
+                    "Apocalipse 18",
+                    "Apocalipse 19"
+                ]
+            },
+            {
+                "day": 30,
+                "chapters": [
+                    "Apocalipse 20",
+                    "Apocalipse 21",
+                    "Apocalipse 22"
+                ]
+            }
+        ]
+    },{
+        "name": "Dezembro",
+        "days": [
+            {
+                "day": 1,
+                "chapters": [
+                    "1Pedro 1",
+                    "1Pedro 2",
+                    "1Pedro 3",
+                    "Salmos 101"
+                ]
+            },
+            {
+                "day": 2,
+                "chapters": [
+                    "1Pedro 4",
+                    "1Pedro 5",
+                    "2Pedro 1"
+                ]
+            },
+            {
+                "day": 3,
+                "chapters": [
+                    "2Pedro 2",
+                    "2Pedro 3",
+                    "Salmos 53",
+                    "Salmos 55"
+                ]
+            },
+            {
+                "day": 4,
+                "chapters": [
+                    "1João 1",
+                    "1João 2",
+                    "1João 3"
+                ]
+            },
+            {
+                "day": 5,
+                "chapters": [
+                    "1João 4",
+                    "1João 5",
+                    "2João 1"
+                ]
+            },
+            {
+                "day": 6,
+                "chapters": [
+                    "3João 1",
+                    "Judas 1",
+                    "Salmos 73",
+                    "Salmos 74"
+                ]
+            },
+            {
+                "day": 7,
+                "chapters": [
+                    "Miqueias 1",
+                    "Miqueias 2",
+                    "Miqueias 3"
+                ]
+            },
+            {
+                "day": 8,
+                "chapters": [
+                    "Miqueias 4",
+                    "Miqueias 5",
+                    "Miqueias 6"
+                ]
+            },
+            {
+                "day": 9,
+                "chapters": [
+                    "Miqueias 7",
+                    "Salmos 60",
+                    "Salmos 93",
+                    "Salmos 94"
+                ]
+            },
+            {
+                "day": 10,
+                "chapters": [
+                    "Isaías 1",
+                    "Isaías 2",
+                    "Isaías 3"
+                ]
+            },
+            {
+                "day": 11,
+                "chapters": [
+                    "Isaías 4",
+                    "Isaías 5",
+                    "Isaías 6"
+                ]
+            },
+            {
+                "day": 12,
+                "chapters": [
+                    "Isaías 7",
+                    "Isaías 8",
+                    "Isaías 9"
+                ]
+            },
+            {
+                "day": 13,
+                "chapters": [
+                    "Isaías 10",
+                    "Isaías 11",
+                    "Isaías 12"
+                ]
+            },
+            {
+                "day": 14,
+                "chapters": [
+                    "Isaías 13",
+                    "Isaías 14",
+                    "Isaías 15"
+                ]
+            },
+            {
+                "day": 15,
+                "chapters": [
+                    "Isaías 16",
+                    "Isaías 17",
+                    "Isaías 18"
+                ]
+            },
+            {
+                "day": 16,
+                "chapters": [
+                    "Isaías 19",
+                    "Isaías 20",
+                    "Isaías 21"
+                ]
+            },
+            {
+                "day": 17,
+                "chapters": [
+                    "Isaías 22",
+                    "Isaías 23",
+                    "Isaías 24"
+                ]
+            },
+            {
+                "day": 18,
+                "chapters": [
+                    "Isaías 25",
+                    "Isaías 26",
+                    "Isaías 27"
+                ]
+            },
+            {
+                "day": 19,
+                "chapters": [
+                    "Isaías 28",
+                    "Isaías 29",
+                    "Isaías 30"
+                ]
+            },
+            {
+                "day": 20,
+                "chapters": [
+                    "Isaías 31",
+                    "Isaías 32",
+                    "Isaías 33"
+                ]
+            },
+            {
+                "day": 21,
+                "chapters": [
+                    "Isaías 34",
+                    "Isaías 35",
+                    "Isaías 36"
+                ]
+            },
+            {
+                "day": 22,
+                "chapters": [
+                    "Isaías 37",
+                    "Isaías 38",
+                    "Isaías 39"
+                ]
+            },
+            {
+                "day": 23,
+                "chapters": [
+                    "Isaías 40",
+                    "Isaías 41",
+                    "Isaías 42"
+                ]
+            },
+            {
+                "day": 24,
+                "chapters": [
+                    "Isaías 43",
+                    "Isaías 44",
+                    "Isaías 45"
+                ]
+            },
+            {
+                "day": 25,
+                "chapters": [
+                    "Isaías 46",
+                    "Isaías 47",
+                    "Isaías 48"
+                ]
+            },
+            {
+                "day": 26,
+                "chapters": [
+                    "Isaías 49",
+                    "Isaías 50",
+                    "Isaías 51"
+                ]
+            },
+            {
+                "day": 27,
+                "chapters": [
+                    "Isaías 52",
+                    "Isaías 53",
+                    "Isaías 54"
+                ]
+            },
+            {
+                "day": 28,
+                "chapters": [
+                    "Isaías 55",
+                    "Isaías 56",
+                    "Isaías 57",
+                    "Salmos 65"
+                ]
+            },
+            {
+                "day": 29,
+                "chapters": [
+                    "Isaías 58",
+                    "Isaías 59",
+                    "Isaías 60"
+                ]
+            },
+            {
+                "day": 30,
+                "chapters": [
+                    "Isaías 61",
+                    "Isaías 62",
+                    "Isaías 63"
+                ]
+            },
+            {
+                "day": 31,
+                "chapters": [
+                    "Isaías 64",
+                    "Isaías 65",
+                    "Isaías 66"
+                ]
+            }
+        ]
+    }]
+}

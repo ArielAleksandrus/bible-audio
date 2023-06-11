@@ -4,24 +4,6 @@ export interface BibleBook {
 }
 export const BibleBooks: BibleBook[] = [
     {
-        "title": "1Tessalonicenses",
-        "chapterCount": 5
-    },
-    {
-        "title": "1João",
-        "chapterCount": 5
-    },
-    {
-        "title": "2João",
-        "chapterCount": 1
-    },
-    {
-        "title": "Judas",
-        "chapterCount": 1
-    }
-];
-/*[
-    {
         "title": "Gênesis",
         "chapterCount": 50
     },
@@ -285,4 +267,4 @@ export const BibleBooks: BibleBook[] = [
         "title": "Apocalipse",
         "chapterCount": 22
     }
-];*/
+];

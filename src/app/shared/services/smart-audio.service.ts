@@ -24,6 +24,8 @@ export class SmartAudioService {
   private onNext?: (context: any) => void;
   private ending: boolean = false;
 
+  mediaProgressTimeout: any = null;
+
   constructor(private platform: Platform,
               private media: Media,
               private file: File) {
@@ -164,6 +166,10 @@ export class SmartAudioService {
     this.setMediaSessionPosition();
   }
   setMediaSessionPosition() {
+    if(this.mediaProgressTimeout) {
+      clearTimeout(this.mediaProgressTimeout);
+    }
+
     this.position().then(secs => {
       if(this.active && this.active.status == "playing") {
         let duration = this.active.mediaObj.getDuration();
@@ -175,7 +181,7 @@ export class SmartAudioService {
         });
       }
     });
-    setTimeout(() => {
+    this.mediaProgressTimeout = setTimeout(() => {
       if(this.active)
         this.setMediaSessionPosition();
     }, 1000);

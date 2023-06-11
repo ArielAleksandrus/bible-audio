@@ -1,0 +1,43 @@
+<ion-content>
+  <hr/>
+  <div class="ion-text-center">
+    <ion-button (click)="continue()">Continuar</ion-button>
+  </div>
+  <hr/>
+
+  <ion-accordion-group *ngIf="plan">
+    <ion-accordion *ngFor="let part of plan.parts" [value]="part.name">
+      <ion-item slot="header" color="light">
+        <ion-label>
+          {{part.name}}
+          <ion-icon *ngIf="part.done" name="checkmark-circle-outline"></ion-icon>
+        </ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-row *ngFor="let dayObj of part.days">
+          <ion-col size="4">
+            Dia {{dayObj.day}}
+            <ion-icon *ngIf="dayObj.done" name="checkmark-circle-outline"></ion-icon>
+          </ion-col>
+          <ion-col size="4">
+            <ul>
+              <li *ngFor="let chapter of dayObj.chapters; let j = index">
+                {{chapter}}
+                <ion-icon *ngIf="dayObj.readDone && dayObj.readDone[j]" name="checkmark-circle-outline"></ion-icon>
+              </li>
+            </ul>
+          </ion-col>
+          <ion-col size="2" (click)="clickDayDone(part.name, dayObj.day)">
+            <ion-icon name="checkmark" size="large"></ion-icon>
+          </ion-col>
+          <ion-col size="2">
+            <ion-icon name="play-circle-outline" size="large" color="success" (click)="playDay(part.name, dayObj.day)"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+   <ion-footer>
+    <app-audio-controls class="audio-controls" [active]="smartAudio.active" (toggle)="toggle()" (prev)="prev()" (next)="next()"></app-audio-controls>
+  </ion-footer>
+</ion-content>

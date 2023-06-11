@@ -1,0 +1,40 @@
+<ion-content>
+  <div *ngIf="loading">
+    <ion-spinner name="circular"></ion-spinner>
+  </div>
+  <ion-accordion-group *ngIf="!loading">
+    <ion-accordion>
+      <ion-item slot="header" color="light">
+        <ion-label>Continuar plano {{savedPlansList.length > 0 ? '(' + savedPlansList.length + ')' : ''}}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-row *ngFor="let plan of savedPlansList">
+          <ion-col size="11">
+            {{plan.name}}
+          </ion-col>
+          <ion-col size="1" (click)="clickSaved(plan)">
+            <ion-icon name="open-outline" size="large"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-accordion>
+
+    <ion-accordion>
+      <ion-item slot="header" color="light">
+        <ion-label>Começar plano {{localPlansInfo.length > 0 ? '(' + localPlansInfo.length + ')' : ''}}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-row *ngFor="let plan of localPlansInfo">
+          <ion-col size="11">
+            {{plan.name}}
+            <br/>
+            <small>{{plan.author}}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;<i>{{plan.days}} dias</i></small>
+          </ion-col>
+          <ion-col size="1" (click)="clickLocal(plan)">
+            <ion-icon name="add-circle-outline" color="success" size="large"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+</ion-content>

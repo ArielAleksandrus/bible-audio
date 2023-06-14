@@ -1,0 +1,11 @@
+.loading{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loading-spinner {
+  stroke: #444;
+  zoom: 2;
+  fill: #222;
+}

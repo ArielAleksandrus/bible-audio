@@ -1,4 +1,7 @@
-<ion-content>
+<div class="loading" *ngIf="loading">
+    <ion-spinner name="circular" class="loading-spinner"></ion-spinner>
+</div>
+<ion-content *ngIf="!loading">
   <div>
     <ion-button (click)="downloadBible()" *ngIf="mode == 'play'">Baixar Bíblia em Áudio</ion-button>
   </div>
@@ -28,7 +31,8 @@
       </div>
     </ion-accordion>
   </ion-accordion-group>
-  <ion-footer>
-    <app-audio-controls class="audio-controls" [active]="smartAudio.active" (toggle)="toggle()" (prev)="prev()" (next)="next()"></app-audio-controls>
-  </ion-footer>
+  <div class="audio-controls-offset"></div>
 </ion-content>
+<ion-footer>
+  <app-audio-controls class="audio-controls" [active]="smartAudio.active" (toggle)="toggle()" (prev)="prev()" (next)="next()" (stop)="stop()"></app-audio-controls>
+</ion-footer>

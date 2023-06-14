@@ -1,5 +1,14 @@
 .audio-title {
+  position: relative;
 	font-family: system-ui;
   font-size: 120%;
   padding-top: 0.9em;
+}
+.close-btn {
+  position: absolute;
+  right: 0;
+  top: 0.3em;
+  color: #fafafa;
+  z-index: 1;
+  font-size: 115%;
 }

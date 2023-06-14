@@ -2,8 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonAccordion } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 import { File } from '@awesome-cordova-plugins/file/ngx';
+import { Platform } from '@ionic/angular';
 
-import { Plan, PlanInfo } from '../../shared/models/plan';
+import { environment } from '../../../environments/environment';
+import { Plan, PlanInfo, PlanChapter } from '../../shared/models/plan';
 import { SoundEl } from '../../audio-controls/sound-el';
 
 import { SmartAudioService } from '../../shared/services/smart-audio.service';
@@ -15,21 +17,42 @@ import { SmartAudioService } from '../../shared/services/smart-audio.service';
 })
 export class PlanDetailsComponent  implements OnInit {
   plan: Plan|null = null;
-  current: {partName: string, day: number}|null = null;
   sounds: SoundEl[] = [];
-  history: SoundEl[] = [];
+
   active: SoundEl|null = null;
   previousSound: SoundEl|null = null;
   nextSound: SoundEl|null = null;
 
+  playlist: PlanChapter[] = [];
+  curIdx: number = 0;
+
+  loading: boolean = true;
+
+  deviceType: 'native'|'html' = 'html';
+
   constructor(private router: Router,
-    private route: ActivatedRoute,
-    public smartAudio: SmartAudioService,
-    private file: File) { }
+              private route: ActivatedRoute,
+              public smartAudio: SmartAudioService,
+              private platform: Platform,
+              private file: File) { 
+
+    if(platform.is('cordova')){
+      this.deviceType = 'native';
+    }
+  }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.plan = Plan.loadSaved(Number(params['id']));
+    this._loadData();
+  }
+
+  private _loadData(): Promise<boolean> {
+    this.loading = true;
+    return new Promise((resolve, reject) => {
+      this.route.params.subscribe(params => {
+        this.plan = Plan.loadSaved(Number(params['id']));
+        this.loading = false;
+        resolve(true);
+      });
     });
   }
 
@@ -37,63 +60,63 @@ export class PlanDetailsComponent  implements OnInit {
     if(!this.plan)
       return;
 
-    let nextDay = this.plan.nextDay();
-    if(nextDay) {
-      let fromIdx: number = 0;
-      for(let i = 0; i < nextDay.dayObj.readDone.length; i++) {
-        let done = nextDay.dayObj.readDone[i];
-        if(done) {
-          fromIdx = i+1;
-        }
+    let aux = this.plan.getPlaylist();
+    this.playlist = aux.playlist;
+
+    if(this.playlist.length == 0) {
+      if(confirm("Você completou o plano! Gostaria de resetar seu progresso e começar DO ZERO?")) {
+        this.plan.clear();
+        this.continue();
       }
-      if(fromIdx >= nextDay.dayObj.readDone.length)
-        fromIdx = nextDay.dayObj.readDone.length;
-      this.playDay(nextDay.partName, nextDay.dayObj.day, fromIdx);
+    } else {
+      this.playPlaylist(aux.selectedIdx);
     }
   }
 
-  clickDayDone(partName: string, day: number) {
-    if(confirm(`Deseja marcar como LIDO o dia ${day} de ${partName}?`)) {
-      if(this.plan)
-        this.plan.dayRead(partName, day);
-    }
-  }
-
-  playDay(partName: string, day: number, fromIdx: number = 0) {
+  toggleDay(partIdx: number, dayIdx: number) {
     if(!this.plan)
       return;
 
-    this.current = {
-      partName: partName,
-      day: day
-    };
-
-    let chapters: {chapter: string, done: boolean}[] = this.plan.getChapters(partName, day);
-
-    let nextDayChapters: {chapter: string, done: boolean}[] = this.plan.getChapters(partName, day+1);
-    let nextDayChapter: string|null = nextDayChapters[0] ? nextDayChapters[0].chapter : null;
-
-    // if all tracks were played, we start from track 0.
-    // if not all tracks were played, start with lowest index track.
-    let firstToPlay: number = 0;
-    for(let i = 0; i < chapters.length; i++) {
-      let chapter = chapters[i];
-      if(!chapter.done && firstToPlay == 0) {
-        firstToPlay = i;
+    let part = this.plan.parts[partIdx];
+    let dayObj = part.days[dayIdx];
+    let action = dayObj.done ? "NÃO LIDO" : "LIDO";
+    if(confirm(`Deseja marcar como ${action} o dia ${dayObj.day} de ${part.name}?`)) {
+      let affected: 'plan'|any = this.plan.dayToggle(partIdx, dayIdx);
+      if(affected == 'plan') {
+        this.finishedPlan();
       }
     }
+  }
 
-    this.createSounds(chapters, nextDayChapter, firstToPlay);
-    this.playSound(this.sounds[fromIdx]);
+  playPlaylist(fromIdx: number = 0) {
+    if(!this.playlist || fromIdx < 0 || fromIdx >= this.playlist.length) {
+      console.error("PlanDetails playPlaylist: Cannot play!", this.playlist, fromIdx);
+      return;
+    }
+    this.createSounds();
+    this.playSound(fromIdx);
+  }
+  playDay(partIdx: number, dayIdx: number, chapterIdx: number = 0) {
+    if(!this.plan)
+      return;
+
+    let globalIdx = this.plan.getGlobalIdx(partIdx, dayIdx, chapterIdx);
+    let aux = this.plan.getPlaylist(globalIdx, 3, 7);
+    this.playlist = aux.playlist;
+
+    this.createSounds();
+    this.playSound(aux.selectedIdx);
     this.closeAccordions();
   }
 
-  playSound(sound: SoundEl) {
+  playSound(idx: number = 0) {
+    this.curIdx = idx;
+
+    let sound: SoundEl = this.sounds[idx];
     if(this.active)
       this.smartAudio.stop();
 
     this.active = sound;
-    let idx = this.sounds.indexOf(this.active);
 
     this.smartAudio.playSound(this, this.active, {
       soundEnded: this.finishedAudio,
@@ -101,39 +124,52 @@ export class PlanDetailsComponent  implements OnInit {
       onNext: this.next
     });
 
-    this.smartAudio.setNext(this.sounds[idx+1]);
-    let prev: SoundEl = idx < 0 ? this.sounds[0] : this.sounds[idx-1];
-    this.smartAudio.setPrev(prev);
+    if(idx < this.sounds.length - 1)
+      this.smartAudio.setNext(this.sounds[idx + 1]);
+    if(idx > 0)
+      this.smartAudio.setPrev(this.sounds[idx-1]);
   }
 
   finishedAudio(context: any, sound: SoundEl) {
+    context.markRead(context, sound.name);
     context.next();
     console.log("Finished: ", sound);
   }
   next(context = this) {
-    if(!context.active)
+    if(!context.plan || !context.active)
       return;
 
-    let idx = context.sounds.indexOf(context.active);
+    let newIdx = context.curIdx + 1;
 
-    context.markRead(context, idx);
+    if(newIdx >= context.playlist.length - 2){
+      let curChap: PlanChapter = context.playlist[newIdx];
+      let globalIdx = context.plan.getGlobalIdx(curChap.partIdx, curChap.dayObjIdx, curChap.chapterIdx);
+      let aux = context.plan.getPlaylist(globalIdx);
+      context.playlist = aux.playlist;
+      context.playPlaylist(aux.selectedIdx);
+    } else {
+      context.playSound(newIdx);
+    }
   }
   prev(context = this) {
-    if(!context.active)
-      return;
-
     context.smartAudio.position().then(secs => {
-      if(!context.active)
+      if(!context.active || !context.plan)
         return;
       // go to audio's beginning if played more than 5 seconds
       if(secs > 5) {       
-        context.playSound(context.active);
-      } else {
-        let idx = context.sounds.indexOf(context.active);
-        if(idx == 0) {
-          idx = 1; // prevent negative index
+        context.playSound(context.curIdx);
+      } else { // go to previous audio
+        let newIdx = context.sounds.indexOf(context.active) - 1;
+        if(newIdx < 0) { // if audio is already first, replay it
+          context.playSound(context.curIdx);
+        } else if(newIdx <= 1) { // reload playlist if we are reaching begining of playlist
+          let curChap: PlanChapter = context.playlist[newIdx];
+          let globalIdx = context.plan.getGlobalIdx(curChap.partIdx, curChap.dayObjIdx, curChap.chapterIdx);
+          let aux = context.plan.getPlaylist(globalIdx);
+          context.playlist = aux.playlist;
+          context.playPlaylist(aux.selectedIdx);
         } else {
-          context.playSound(context.sounds[idx - 1]);
+          context.playSound(newIdx);
         }
       }
       
@@ -143,58 +179,50 @@ export class PlanDetailsComponent  implements OnInit {
     if(this.smartAudio.active)
       this.smartAudio.toggle();
   }
+  stop() {
+    if(this.smartAudio.active) 
+      this.smartAudio.stop();
+  }
 
-  markRead(context: any, idx: number) {
-    if(!context.plan || !context.current)
+  markRead(context: any) {
+    if(!context.plan || context.curIdx < 0 || context.playlist.length == 0)
       return;
 
-    let sound = context.sounds[idx];
-    let doneDay = idx == context.sounds.length - 2;
-
-    context.plan.chapterRead(context.current.partName, context.current.day, sound.name);
-
-    if(doneDay) {
-      //@ts-ignore
-      let part = context.plan.parts.find(el => el.name == context.current.partName);
-      if(part) {
-        let lastDay = context.current.day == part.days.length;
-        if(lastDay) { // part is finished. fetch next part
-          let partIdx = context.plan.parts.indexOf(part);
-          let lastPart = partIdx == context.plan.parts.length - 1;
-          if(lastPart) {
-            // stop fetching if is last part. user finished the plan
-          } else {
-            // start next part from day 1
-            context.playDay(context.plan.parts[partIdx + 1].name, 1);
-          }
-        } else { // get next day
-          context.playDay(context.current.partName, context.current.day + 1);
-        }
+    let chap: PlanChapter = context.playlist[context.curIdx];
+    if(chap && !chap.done) {
+      let affected: 'plan'|any = context.plan.chapterToggle(chap);
+      if(affected == 'plan') {
+        context.finishedPlan();
       }
-    } else {
-      context.playSound(context.sounds[idx + 1]);
     }
   }
 
-  createSounds(chapters: {chapter: string, done: boolean}[], nextDayChapter: string|null, firstToPlay: number = 0) {
+  finishedPlan() {
+    alert("PARABÉNS! VOCÊ CONCLUIU SEU PLANO!");
+  }
+
+  createSounds(chapters?: PlanChapter[]) {
+    if(!chapters) {
+      chapters = this.playlist;
+    }
     this.sounds = [];
     for(let chapter of chapters) {
       this.sounds.push(this.createSound(chapter.chapter));
     }
-    if(nextDayChapter) {
-      this.sounds.push(this.createSound(nextDayChapter));
-    }
-    this.active = this.sounds[firstToPlay];
   }
   createSound(chapterRaw: string): SoundEl {
     let book: string = chapterRaw.split(' ')[0];
     let chapter: number = Number(chapterRaw.split(' ')[1]);
     let id = `${book}${chapter}`;
+    let asset = `${environment.resource_url}/audio/${book}/${book} ${chapter}.mp3`;
+    if(this.deviceType == 'native') {
+      asset = `${this.file.externalApplicationStorageDirectory}${book}/${book} ${chapter}.mp3`;
+    }
     return {
       key: id,
       name: `${book} ${chapter}`,
-      asset: `${this.file.externalApplicationStorageDirectory}${book}/${book} ${chapter}.mp3`,
-      type: 'native'
+      asset: asset,
+      type: this.deviceType
     };
   }
   closeAccordions() {

@@ -13,6 +13,7 @@ export class AudioControlsComponent  implements OnInit {
   @Output() prev: EventEmitter<any> = new EventEmitter();
   @Output() next: EventEmitter<any> = new EventEmitter();
   @Output() toggle: EventEmitter<any> = new EventEmitter();
+  @Output() stop: EventEmitter<any> = new EventEmitter();
   @ViewChild('range', {static: false}) range?: IonRange;
 
   progress: number = 0;
@@ -33,6 +34,10 @@ export class AudioControlsComponent  implements OnInit {
       let seek = this.active.mediaObj.getCurrentPosition((pos: number) => {
         if(!this.active)
           return;
+        
+        if(pos == null)
+          pos = this.active.mediaObj.currentTime;
+
         this.progress = (pos / this.active.mediaObj.getDuration()) * 100 || 0;
       });
     }, 1000);
@@ -46,6 +51,9 @@ export class AudioControlsComponent  implements OnInit {
   }
   toggleEl() {
     this.toggle.emit(null);
+  }
+  stopEl() {
+    this.stop.emit(null);
   }
   seek() {
     if(!this.range || !this.active)

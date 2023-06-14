@@ -9,11 +9,11 @@ import { AppComponent } from './app.component';
 
 import { SmartAudioService } from './shared/services/smart-audio.service';
 import { DownloaderService } from './shared/services/downloader.service';
+import { PermissionsService } from './shared/services/permissions.service';
 import { Media } from '@awesome-cordova-plugins/media/ngx';
 import { File } from '@awesome-cordova-plugins/file/ngx';
 import { HTTP } from '@awesome-cordova-plugins/http/ngx';
 import { HttpClientModule } from '@angular/common/http';
-import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions/ngx';
 
 
 @NgModule({
@@ -25,7 +25,7 @@ import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions
     Media,
     File,
     HTTP,
-    AndroidPermissions,
+    PermissionsService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent],

@@ -1,4 +1,8 @@
-<ion-content>
+<div class="loading" *ngIf="loading">
+    <ion-spinner name="circular" class="loading-spinner"></ion-spinner>
+</div>
+
+<ion-content *ngIf="!loading">
   <hr/>
   <div class="ion-text-center">
     <ion-button (click)="continue()">Continuar</ion-button>
@@ -6,7 +10,7 @@
   <hr/>
 
   <ion-accordion-group *ngIf="plan">
-    <ion-accordion *ngFor="let part of plan.parts" [value]="part.name">
+    <ion-accordion *ngFor="let part of plan.parts; let i = index" [value]="part.name">
       <ion-item slot="header" color="light">
         <ion-label>
           {{part.name}}
@@ -14,30 +18,31 @@
         </ion-label>
       </ion-item>
       <div class="ion-padding" slot="content">
-        <ion-row *ngFor="let dayObj of part.days">
+        <ion-row *ngFor="let dayObj of part.days; let j = index">
           <ion-col size="4">
             Dia {{dayObj.day}}
             <ion-icon *ngIf="dayObj.done" name="checkmark-circle-outline"></ion-icon>
           </ion-col>
           <ion-col size="4">
             <ul>
-              <li *ngFor="let chapter of dayObj.chapters; let j = index">
+              <li *ngFor="let chapter of dayObj.chapters; let k = index">
                 {{chapter}}
-                <ion-icon *ngIf="dayObj.readDone && dayObj.readDone[j]" name="checkmark-circle-outline"></ion-icon>
+                <ion-icon *ngIf="dayObj.readDone && dayObj.readDone[k]" name="checkmark-circle-outline"></ion-icon>
               </li>
             </ul>
           </ion-col>
-          <ion-col size="2" (click)="clickDayDone(part.name, dayObj.day)">
+          <ion-col size="2" (click)="toggleDay(i, j)">
             <ion-icon name="checkmark" size="large"></ion-icon>
           </ion-col>
           <ion-col size="2">
-            <ion-icon name="play-circle-outline" size="large" color="success" (click)="playDay(part.name, dayObj.day)"></ion-icon>
+            <ion-icon name="play-circle-outline" size="large" color="success" (click)="playDay(i, j)"></ion-icon>
           </ion-col>
         </ion-row>
       </div>
     </ion-accordion>
   </ion-accordion-group>
-   <ion-footer>
-    <app-audio-controls class="audio-controls" [active]="smartAudio.active" (toggle)="toggle()" (prev)="prev()" (next)="next()"></app-audio-controls>
-  </ion-footer>
+  <div class="audio-controls-offset"></div>
 </ion-content>
+<ion-footer>
+  <app-audio-controls class="audio-controls" [active]="smartAudio.active" (toggle)="toggle()" (prev)="prev()" (next)="next()" (stop)="stop()"></app-audio-controls>
+</ion-footer>

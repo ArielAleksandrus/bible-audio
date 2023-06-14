@@ -8,6 +8,16 @@
 	cursor: pointer;
 	background-color: lightcoral;
 }
+ion-content {
+	padding-bottom: 10em;
+}
+.audio-controls-offset {
+	height: 10em;
+}
+.audio-controls {
+	position: relative;
+	top: -10em;
+}
 .downloaded {
 	background-color: lightgreen;
 }
@@ -16,4 +26,15 @@
 }
 .pending-icon {
 	color: darkred;
+}
+.loading{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loading-spinner {
+  stroke: #444;
+  zoom: 2;
+  fill: #222;
 }

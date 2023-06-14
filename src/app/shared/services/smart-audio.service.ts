@@ -13,7 +13,7 @@ export class SmartAudioService {
   id: string = '';
   filepath: string = '';
 
-  audioType: string = 'html5';
+  audioType: 'html'|'native' = 'html';
 
   active: SoundEl|null = null;
   context: any = null;
@@ -47,7 +47,13 @@ export class SmartAudioService {
       this.onNext = callbacks.onNext;
     }
 
+    if(this.audioType == 'html') {
+      this.playWeb(sound);
+      return;
+    }
+
     let file: MediaObject = this.media.create(sound.asset);
+
     file.onStatusUpdate.subscribe((statusId: number) => {
       this.updateStatus(statusId);
     });
@@ -68,6 +74,33 @@ export class SmartAudioService {
     file.play();
 
     this.setMediaSession(sound);
+  }
+  playWeb(sound: SoundEl) {
+    let file: any = new Audio(sound.asset);
+    sound.status = "playing";
+    sound.mediaObj = file;
+
+    sound.mediaObj = file;
+    file.addEventListener('ended', () => {
+      this.updateStatus(4);
+    });
+    file.addEventListener('onerror', () => {
+      console.error("SmartAudio playing error");
+    });
+    file.getCurrentPosition = (onSuccess: (secs?: number) => {}) => {
+      onSuccess(undefined); // it will always be undefined
+    };
+    file.getDuration = (): number => {
+      return file.duration;
+    };
+    file.seekTo = (millis: number) => {
+      file.currentTime = millis / 1000;
+    };
+    if(this.active) {
+      this.stop();
+    }
+    this.active = sound;
+    file.play();
   }
   playFile(context: any, id: string, folder: string, filename: string, audioName: string, callbacks?: {
     soundEnded?: (context: any, sound: SoundEl) => void,
@@ -90,8 +123,13 @@ export class SmartAudioService {
     if(!this.active || !this.active.mediaObj) {
       return;
     }
-    this.active.mediaObj.stop();
-    this.active.mediaObj.release();
+    if(this.audioType == 'native') {
+      this.active.mediaObj.stop();
+      this.active.mediaObj.release();
+    } else {
+      this.active.mediaObj.pause();
+      this.active.mediaObj.currentTime = 0;
+    }
     this.active = null;
   }
   toggle() {
@@ -108,15 +146,23 @@ export class SmartAudioService {
 
   position(): Promise<number> {
     return new Promise((resolve, reject) => {
-      if(!this.active || !this.active.mediaObj)
-        return reject(-1);
-      else
-        this.active.mediaObj.getCurrentPosition((res: number) => {
-          resolve(res);
-        }, (err: any) => {
-          console.error("SmartAudio: position()", err);
+      if(!this.active || !this.active.mediaObj) {
+        reject(-1);
+        return;
+      }
+      this.active.mediaObj.getCurrentPosition((res: number) => {
+        if(!this.active){
           reject(-1);
-        })
+          return;
+        }
+
+        if(res == null)
+          res = this.active.mediaObj.currentTime;
+        resolve(res);
+      }, (err: any) => {
+        console.error("SmartAudio: position()", err);
+        reject(-1);
+      });
     });
   }
 
@@ -173,7 +219,7 @@ export class SmartAudioService {
     this.position().then(secs => {
       if(this.active && this.active.status == "playing") {
         let duration = this.active.mediaObj.getDuration();
-        this.ending = duration - secs < 3;
+        this.ending = duration - secs < 5;
         MediaSession.setPositionState({
           duration: duration,
           playbackRate: 1,

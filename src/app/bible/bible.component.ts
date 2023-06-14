@@ -1,10 +1,13 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions/ngx';
+
 import { Book } from '../shared/models/book';
 import { BibleBooks } from '../shared/constants/bible-books';
 
 import { Platform } from '@ionic/angular';
 import { SmartAudioService } from '../shared/services/smart-audio.service';
 import { DownloaderService } from '../shared/services/downloader.service';
+import { PermissionsService } from '../shared/services/permissions.service';
 import { BibleDownloadHelper } from '../shared/helpers/bible-download-helper';
 
 import { Plan } from '../shared/models/plan';
@@ -41,7 +44,13 @@ export class BibleComponent  implements OnInit {
 
   deviceType: 'native'|'html' = 'html';
 
+  loading: boolean = true;
+
+  permissions: string[] = [];
+
   constructor(public smartAudio: SmartAudioService,
+              private aPerm: AndroidPermissions,
+              private permService: PermissionsService,
               private file: File,
               private http: HTTP,
               private httpCli: HttpClient,
@@ -52,17 +61,46 @@ export class BibleComponent  implements OnInit {
     if(platform.is('cordova')){
       this.deviceType = 'native';
     }
+    this.permissions = [
+      this.aPerm.PERMISSION.INTERNET,
+      this.aPerm.PERMISSION.READ_EXTERNAL_STORAGE,
+      this.aPerm.PERMISSION.WRITE_EXTERNAL_STORAGE,
+      this.aPerm.PERMISSION.READ_MEDIA_AUDIO,
+      this.aPerm.PERMISSION.POST_NOTIFICATIONS
+    ];
   }
 
   ngOnInit() {
-    this._loadBooksInfo();
-    if(this.mode == 'selection') {
-      this.bibleHelper.buildAll();
-    } else {
-      this.bibleHelper.checkAll().then(res => {
-        
-      }).catch(err => {console.log("Helper error", err)});
+    this._loadData().then(
+      res => {
+      }
+    );
+    
+    if(this.deviceType == 'native') {
+      this.permService.requestAllAndroid(this.permissions).then(res2 => {
+        console.log(res2);
+      });
     }
+  }
+
+  private _loadData(): Promise<boolean> {
+    this.loading = true;
+
+    return new Promise((resolve) => {
+      this._loadBooksInfo();
+      if(this.mode == 'selection') {
+        this.bibleHelper.buildAll();
+        resolve(true);
+      } else {
+        this.loading = false;
+        this.bibleHelper.checkAll().then(res => {
+          resolve(true);
+        }).catch(err => {
+          console.log("Helper error", err);
+          resolve(false);
+        });
+      }
+    });
   }
 
   clickedChapter(book: Book, chapter: number) {
@@ -115,6 +153,12 @@ export class BibleComponent  implements OnInit {
     console.log("Finished: ", sound);
   }
 
+  stop() {
+    console.log('stop!');
+    if(this.smartAudio.active) {
+      this.smartAudio.stop();
+    }
+  }
   toggle() {
     if(this.smartAudio.active)
       this.smartAudio.toggle();

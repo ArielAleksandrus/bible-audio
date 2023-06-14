@@ -12,7 +12,8 @@ import { Plan, PlanInfo } from '../shared/models/plan';
 export class PlansComponent  implements OnInit {
   savedPlansList: {id: number, name: string}[] = [];
   localPlansInfo: PlanInfo[] = [];
-  loading: boolean = false;
+
+  loading: boolean = true;
 
   constructor(private http: HttpClient,
     private router: Router,
@@ -20,17 +21,35 @@ export class PlansComponent  implements OnInit {
 
 
   ngOnInit() {
-    Plan.listLocal(this.http).then(res => {
-      this.localPlansInfo = res;
+    this._loadData();
+  }
+
+  private _loadData(): Promise<boolean> {
+    this.loading = true;
+    return new Promise((resolve, reject) => {
+      this.savedPlansList = Plan.listSaved();
+      Plan.listLocal(this.http).then(res => {
+        this.localPlansInfo = res;
+        this.loading = false;
+        resolve(true);
+      }).catch(err => {
+        console.log("Error loading local plans", err);
+        this.loading = false;
+        resolve(false);
+      });
     });
-    this.savedPlansList = Plan.listSaved();
   }
 
   clickSaved(plan: {id: number, name: string}) {
     this.loading = true;
     setTimeout(() => {
-      this.router.navigate([plan.id], {relativeTo: this.route}).then(_ => {this.loading = false}).catch(_ => {this.loading = false});
-    }, 100);
+      new Promise((resolve, reject) => {
+        this.router.navigate([plan.id], {relativeTo: this.route}).then(_ => {
+          this.loading = false;
+          resolve(true);
+        }).catch(_ => {this.loading = false; resolve(false)});
+      });
+    }, 1000);
   }
   clickLocal(plan: PlanInfo) {
     this.loading = true;

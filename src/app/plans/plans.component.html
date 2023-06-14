@@ -1,18 +1,19 @@
-<ion-content>
-  <div *ngIf="loading">
-    <ion-spinner name="circular"></ion-spinner>
-  </div>
-  <ion-accordion-group *ngIf="!loading">
+<div class="loading" *ngIf="loading">
+    <ion-spinner name="circular" class="loading-spinner"></ion-spinner>
+</div>
+
+<ion-content *ngIf="!loading">
+  <ion-accordion-group>
     <ion-accordion>
       <ion-item slot="header" color="light">
         <ion-label>Continuar plano {{savedPlansList.length > 0 ? '(' + savedPlansList.length + ')' : ''}}</ion-label>
       </ion-item>
       <div class="ion-padding" slot="content">
-        <ion-row *ngFor="let plan of savedPlansList">
+        <ion-row *ngFor="let plan of savedPlansList" (click)="clickSaved(plan)">
           <ion-col size="11">
             {{plan.name}}
           </ion-col>
-          <ion-col size="1" (click)="clickSaved(plan)">
+          <ion-col size="1">
             <ion-icon name="open-outline" size="large"></ion-icon>
           </ion-col>
         </ion-row>

@@ -7,6 +7,14 @@ export interface PlanInfo {
 	path: string;
 	days: number;
 }
+export interface PlanChapter {
+	chapter: string,
+	done: boolean,
+	partIdx: number,
+	dayObjIdx: number,
+	chapterIdx: number,
+	globalIdx: number
+};
 export class Plan implements PlanInfo {
 	id: number = -1;
 	name: string = '';
@@ -26,137 +34,167 @@ export class Plan implements PlanInfo {
 	}[] = [];
 	done: boolean = false; // for storing progress
 
+	//for optimizing media play
+	private _allChapters: PlanChapter[] = [];
+
 	constructor(json: any) {
 		for(let key in json) {
 			//@ts-ignore
 			this[key as keyof Plan] = json[key];
 		}
+		this._initData();
 	}
 
-	getChapters(partName: string, day: number): {chapter: string, done: boolean}[] {
-		if(day < 1)
-			return [];
-
-		let res: {chapter: string, done: boolean}[] = [];
-		let part = this.parts.find(el => el.name == partName);
-		if(part) {
-			let dayObj: any = part.days.find(el => el.day == day);
-			if(dayObj) {
-				for(let i = 0; i < dayObj.chapters.length; i++) {
-					res.push({chapter: dayObj.chapters[i], done: dayObj.readDone[i]});
+	getAllChapters(): PlanChapter[] {
+		return this._allChapters;
+	}
+	getGlobalIdx(partIdx: number, dayIdx: number, chapterIdx: number): number {
+		let res = 0;
+		for(let i = 0; i < this.parts.length; i++) {
+			for(let j = 0; j < this.parts[i].days.length; j++)
+				for(let k = 0; k < this.parts[i].days[j].chapters.length; k++) {
+					if(partIdx == i && dayIdx == j && chapterIdx == k) {
+						return res;
+					} else {
+						res++;
+					}
 				}
-			} else {
-				if(day > part.days[part.days.length - 1].day) { // skip to next part
-
+		}
+		return -1;
+	}
+	getPlaylist(fromIdx: number = 0, elementsBefore: number = 5, elementsAfter: number = 5): {playlist: PlanChapter[], selectedIdx: number} {
+		let playlist: PlanChapter[] = [];
+		let selectedIdx: number = 0;
+		for(let i = fromIdx; i < this._allChapters.length; i++) {
+			let chap: PlanChapter = this._allChapters[i];
+			if(!chap.done) {
+				playlist.push(chap);
+				elementsAfter--;
+				if(elementsAfter <= 0) {
+					break;
 				}
-				return this.getChapters(this.parts[this.parts.indexOf(part) + 1].name, day - part.days.length);
 			}
 		}
+		for(let i = fromIdx - 1; i >= 0; i--) {
+			let chap: PlanChapter = this._allChapters[i];
+			if(!chap.done) {
+				playlist.unshift(chap);
+				selectedIdx++;
+				elementsBefore--;
+				if(elementsBefore <= 0) {
+					break;
+				}
+			}
+		}
+		return {playlist: playlist, selectedIdx: selectedIdx};
+	}
+
+	partToggle(partIdx: number): 'part'|'plan' {
+		let res: 'part'|'plan' = 'part';
+		let part = this.parts[partIdx];
+		let curValue = part.done;
+
+
+		// updates all days and chapters
+		for(let dayObj of part.days) {
+			for(let i = 0; i < dayObj.readDone.length; i++) {
+				dayObj.readDone[i] = !curValue;
+			}
+			dayObj.done = !curValue;
+		}
+
+		// check if plan was affected
+		this.done = true;
+		for(let part of this.parts) {
+			if(!part.done)
+				this.done = false;
+		}
+
+		if(this.done == !curValue)
+			res = 'plan';
+
+		this.save();
 		return res;
 	}
+	dayToggle(partIdx: number, dayIdx: number): 'day'|'part'|'plan' {
+		let res: 'day'|'part'|'plan' = 'day';
+		let part = this.parts[partIdx];
+		let dayObj = part.days[dayIdx];
+		let curValue = dayObj.done;
 
-	nextDay(): {
-		partName: string,
-		dayObj: {
-			day: number,
-			chapters: string[],
-			done: boolean,
-			readDone: boolean[]
+		// updates the 'readDone' variable in dayObj
+		for(let i = 0; i < dayObj.readDone.length; i++) {
+			dayObj.readDone[i] = !curValue;
 		}
-	}|null {
-		for(let part of this.parts) {
-			if(!part.done) {
-				for(let dayObj of part.days) {
-					if(!dayObj.done) {
-						return {
-							partName: part.name,
-							dayObj: {
-								day: dayObj.day,
-								chapters: dayObj.chapters,
-								done: false,
-								readDone: dayObj.readDone
-							}
-						};
-					}
-				}
-			}
-		}
+		dayObj.done = !curValue;
 
-		// plan is completed. return first day.
-		let aux = {
-			partName: this.parts[0].name,
-			dayObj: {
-				day: this.parts[0].days[0].day,
-				chapters: this.parts[0].days[0].chapters,
-				done: false,
-				readDone: []
-			}
-		};
-		for(let i = 0; i < aux.dayObj.chapters.length; i++){
-			aux.dayObj.readDone = []
-			// @ts-ignore
-			aux.dayObj.readDone.push(false);
-		}
-
-		return aux;
-	}
-
-	partRead(partName: string) {
-		let part = this.parts.find(el => el.name == partName);
-		if(part) {
-			for(let dayObj of part.days) {
-				this.dayRead(partName, dayObj.day);
-			}
+		// check if part was affected
+		if(dayObj.done == !curValue) {
 			part.done = true;
-		}
-		this.save();
-	}
-	dayRead(partName: string, day: number) {
-		let part = this.parts.find(el => el.name == partName);
-		if(part) {
-			let dayObj = part.days.find(el => el.day == day);
-			if(dayObj) {
-				dayObj.readDone = [];
-				for(let i = 0; i < dayObj.chapters.length; i++)
-					dayObj.readDone.push(true);
-
-				dayObj.done = true;
+			for(let day of part.days) {
+				if(!day.done)
+					part.done = false;
 			}
 		}
-		this.save();
-	}
-	chapterRead(partName: string, day: number, chapter: string) {
-		let part = this.parts.find(el => el.name == partName);
-		if(part) {
-			let dayObj = part.days.find(el => el.day == day);
-			if(dayObj) {
-				let idx = dayObj.chapters.indexOf(chapter);
-				dayObj.readDone[idx] = true;
-
-				// check if day is complete
-				dayObj.done = true;
-				for(let val of dayObj.readDone) {
-					if(!val)
-						dayObj.done = false;
-				}
-				// check if part is complete
-				if(dayObj.done) {
-					part.done = true;
-					for(let day of part.days) {
-						if(!day.done)
-							part.done = false;
-					}
-				}
-				// check if plan is complete
-				this.done = true;
-				for(let part of this.parts) {
-					if(!part.done)
-						this.done = false;
-				}
-
+		// check if plan was complete
+		if(part.done == !curValue) {
+			res = 'part';
+			this.done = true;
+			for(let part of this.parts) {
+				if(!part.done)
+					this.done = false;
 			}
 		}
+		if(this.done == !curValue) {
+			res = 'plan';
+		}
+
+		// update this._allChapters variable
+		for(let chap of this._allChapters) {
+			if(chap.partIdx == chap.partIdx && chap.dayObjIdx == dayIdx)
+				chap.done = !curValue;
+		}
 		this.save();
+		return res;
+	}
+	chapterToggle(chap: PlanChapter): 'chapter'|'day'|'part'|'plan' {
+		let res: 'chapter'|'day'|'part'|'plan' = 'chapter';
+		let part = this.parts[chap.partIdx];
+		let dayObj = part.days[chap.dayObjIdx];
+		let curValue = dayObj.readDone[chap.chapterIdx];
+		dayObj.readDone[chap.chapterIdx] = !curValue;
+
+		// check if day was affected
+		dayObj.done = true;
+		for(let val of dayObj.readDone) {
+			if(!val)
+				dayObj.done = false;
+		}
+		// check if part was affected
+		if(dayObj.done == !curValue) {
+			res = 'day';
+			part.done = true;
+			for(let day of part.days) {
+				if(!day.done)
+					part.done = false;
+			}
+		}
+		// check if plan was complete
+		if(part.done == !curValue) {
+			res = 'part';
+			this.done = true;
+			for(let part of this.parts) {
+				if(!part.done)
+					this.done = false;
+			}
+		}
+		if(this.done == !curValue) {
+			res = 'plan';
+		}
+
+		this._allChapters[chap.globalIdx].done = !curValue;
+		this.save();
+		return res;
 	}
 
 	clear() {
@@ -165,11 +203,14 @@ export class Plan implements PlanInfo {
 			part.done = false;
 			for(let dayObj of part.days) {
 				dayObj.done = false;
-				dayObj.readDone = [];
 				for(let i = 0; i < dayObj.chapters.length; i++)
-					dayObj.readDone.push(false);
+					dayObj.readDone[i] = false;
 			}
 		}
+		for(let chap of this._allChapters) {
+			chap.done = false;
+		}
+		this.save();
 	}
 	save() {
 		localStorage.setItem(`plan ${this.id}`, JSON.stringify(this));
@@ -189,6 +230,40 @@ export class Plan implements PlanInfo {
 		}
 		localStorage.setItem('savedPlans', JSON.stringify(arr));
 	}
+
+	/**
+	 * Creates the this._allChapters variable.
+	 * It is an array of all chapters that the plan includes.
+	 */
+	private _initData() {
+		this._allChapters = [];
+		let idx = 0;
+		for(let i = 0; i < this.parts.length; i++) {
+			let part = this.parts[i];
+			for(let j = 0; j < part.days.length; j++) {
+				let dayObj = part.days[j];
+				if(!dayObj.readDone) {
+					// add the 'readDone' array if doesn't exist.
+					dayObj.readDone = [];
+					for(let k = 0; k < dayObj.chapters.length; k++)
+						dayObj.readDone.push(false);
+				}
+				for(let k = 0; k < dayObj.chapters.length; k++) {
+					let planChap: PlanChapter = {
+						chapter: dayObj.chapters[k],
+						done: dayObj.readDone[k],
+						chapterIdx: k,
+						dayObjIdx: j,
+						partIdx: i,
+						globalIdx: idx
+					};
+					this._allChapters.push(planChap);
+					idx++;
+				}
+			}
+		}
+	}
+
 	static listSaved(): {id: number, name: string}[] {
 		let str = localStorage.getItem('savedPlans');
 		if(str) {

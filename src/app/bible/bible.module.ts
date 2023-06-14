@@ -3,6 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AudioControlsModule } from '../audio-controls/audio-controls.module';
+import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions/ngx';
+import { PermissionsService } from '../shared/services/permissions.service';
 
 import { BibleRoutingModule } from './bible-routing.module';
 import { BibleComponent } from './bible.component';
@@ -16,6 +18,7 @@ import { BibleComponent } from './bible.component';
     BibleRoutingModule,
     AudioControlsModule
   ],
+  providers: [AndroidPermissions, PermissionsService],
   exports: [BibleComponent],
 })
 export class BibleModule { }

@@ -62,12 +62,20 @@ export class Plan implements PlanInfo {
 		}
 		return -1;
 	}
-	getPlaylist(fromIdx: number = 0, elementsBefore: number = 5, elementsAfter: number = 5): {playlist: PlanChapter[], selectedIdx: number} {
+	getPlaylist(fromIdx: number = 0, elementsBefore: number = 5, elementsAfter: number = 5, undoneOnly: boolean = true): {playlist: PlanChapter[], selectedIdx: number} {
 		let playlist: PlanChapter[] = [];
 		let selectedIdx: number = 0;
 		for(let i = fromIdx; i < this._allChapters.length; i++) {
 			let chap: PlanChapter = this._allChapters[i];
-			if(!chap.done) {
+			if(undoneOnly) {
+				if(!chap.done) {
+					playlist.push(chap);
+					elementsAfter--;
+					if(elementsAfter <= 0) {
+						break;
+					}
+				}
+			} else {
 				playlist.push(chap);
 				elementsAfter--;
 				if(elementsAfter <= 0) {
@@ -77,13 +85,11 @@ export class Plan implements PlanInfo {
 		}
 		for(let i = fromIdx - 1; i >= 0; i--) {
 			let chap: PlanChapter = this._allChapters[i];
-			if(!chap.done) {
-				playlist.unshift(chap);
-				selectedIdx++;
-				elementsBefore--;
-				if(elementsBefore <= 0) {
-					break;
-				}
+			playlist.unshift(chap);
+			selectedIdx++;
+			elementsBefore--;
+			if(elementsBefore <= 0) {
+				break;
 			}
 		}
 		return {playlist: playlist, selectedIdx: selectedIdx};

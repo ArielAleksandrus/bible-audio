@@ -2,7 +2,7 @@
     <ion-spinner name="circular" class="loading-spinner"></ion-spinner>
 </div>
 <ion-content *ngIf="!loading">
-  <div>
+  <div *ngIf="deviceType == 'native'">
     <ion-button (click)="downloadBible()" *ngIf="mode == 'play'">Baixar Bíblia em Áudio</ion-button>
   </div>
   <ion-accordion-group>
@@ -23,7 +23,8 @@
         <ion-grid>
           <ion-row>
             <ion-col size="2" *ngFor="let chapter of book.chapters; let j = index" (click)="clickedChapter(book, chapter)"
-                     class="chapter" [class.downloaded]="bibleHelper.existing[i].chapters[j].found">
+                     class="chapter" [class.downloaded]="bibleHelper.existing[i].chapters[j].found"
+                     [class.chapter-normal]="deviceType == 'html'">
               {{chapter}}
             </ion-col>
           </ion-row>

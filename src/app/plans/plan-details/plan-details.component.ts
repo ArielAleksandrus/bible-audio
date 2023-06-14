@@ -82,7 +82,7 @@ export class PlanDetailsComponent  implements OnInit {
     let action = dayObj.done ? "NÃO LIDO" : "LIDO";
     if(confirm(`Deseja marcar como ${action} o dia ${dayObj.day} de ${part.name}?`)) {
       let affected: 'plan'|any = this.plan.dayToggle(partIdx, dayIdx);
-      if(affected == 'plan') {
+      if(affected == 'plan' && action == "NÃO LIDO") {
         this.finishedPlan();
       }
     }
@@ -131,7 +131,7 @@ export class PlanDetailsComponent  implements OnInit {
   }
 
   finishedAudio(context: any, sound: SoundEl) {
-    context.markRead(context, sound.name);
+    context.markRead(context);
     context.next();
     console.log("Finished: ", sound);
   }
@@ -165,7 +165,7 @@ export class PlanDetailsComponent  implements OnInit {
         } else if(newIdx <= 1) { // reload playlist if we are reaching begining of playlist
           let curChap: PlanChapter = context.playlist[newIdx];
           let globalIdx = context.plan.getGlobalIdx(curChap.partIdx, curChap.dayObjIdx, curChap.chapterIdx);
-          let aux = context.plan.getPlaylist(globalIdx);
+          let aux = context.plan.getPlaylist(globalIdx, 5, 5, false);
           context.playlist = aux.playlist;
           context.playPlaylist(aux.selectedIdx);
         } else {

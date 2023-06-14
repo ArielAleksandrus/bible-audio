@@ -49,6 +49,7 @@ export class SmartAudioService {
 
     if(this.audioType == 'html') {
       this.playWeb(sound);
+      this.setMediaSession(sound);
       return;
     }
 
@@ -219,12 +220,14 @@ export class SmartAudioService {
     this.position().then(secs => {
       if(this.active && this.active.status == "playing") {
         let duration = this.active.mediaObj.getDuration();
-        this.ending = duration - secs < 5;
-        MediaSession.setPositionState({
-          duration: duration,
-          playbackRate: 1,
-          position: secs
-        });
+        if(!isNaN(duration)) {
+          this.ending = duration - secs < 5;
+          MediaSession.setPositionState({
+            duration: duration,
+            playbackRate: 1,
+            position: secs
+          });
+        }
       }
     });
     this.mediaProgressTimeout = setTimeout(() => {

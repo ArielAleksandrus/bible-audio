@@ -82,7 +82,7 @@ export class PlanDetailsComponent  implements OnInit {
     let action = dayObj.done ? "NÃO LIDO" : "LIDO";
     if(confirm(`Deseja marcar como ${action} o dia ${dayObj.day} de ${part.name}?`)) {
       let affected: 'plan'|any = this.plan.dayToggle(partIdx, dayIdx);
-      if(affected == 'plan' && action == "NÃO LIDO") {
+      if(affected == 'plan' && action == "LIDO") {
         this.finishedPlan();
       }
     }

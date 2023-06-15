@@ -15,6 +15,9 @@ import { File } from '@awesome-cordova-plugins/file/ngx';
 import { HTTP } from '@awesome-cordova-plugins/http/ngx';
 import { HttpClientModule } from '@angular/common/http';
 
+import { ForegroundService } from '@awesome-cordova-plugins/foreground-service/ngx';
+import { BackgroundMode } from '@awesome-cordova-plugins/background-mode/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,6 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     File,
     HTTP,
     PermissionsService,
+    ForegroundService,
+    BackgroundMode,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent],

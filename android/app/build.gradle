@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
 
 android {
     namespace "live.nlabs.bible"
@@ -7,8 +9,8 @@ android {
         applicationId "live.nlabs.bible"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 3
-        versionName "1.0.0.2"
+        versionCode 5
+        versionName "1.0.0.4"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
@@ -18,8 +20,21 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+          // Enables code shrinking, obfuscation, and optimization for only
+          // your project's release build type. Make sure to use a build
+          // variant with `debuggable false`.
+          minifyEnabled true
+
+          // Enables resource shrinking, which is performed by the
+          // Android Gradle plugin.
+          shrinkResources true
+
+          // Includes the default ProGuard rules files that are packaged with
+          // the Android Gradle plugin. To learn more, go to the section about
+          // R8 configuration files.
+          proguardFiles getDefaultProguardFile(
+            'proguard-android-optimize.txt'),
+            'proguard-rules.pro'
         }
     }
 }
@@ -40,6 +55,13 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
     implementation project(':capacitor-cordova-android-plugins')
+
+    implementation platform('com.google.firebase:firebase-bom:32.1.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    // Add the dependencies for the Crashlytics and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-analytics'
 }
 
 apply from: 'capacitor.build.gradle'
@@ -52,3 +74,4 @@ try {
 } catch(Exception e) {
     logger.info("google-services.json not found, google-services plugin not applied. Push Notifications won't work")
 }
+

@@ -9,8 +9,8 @@ android {
         applicationId "live.nlabs.bible"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 8
-        versionName "1.0.0.7"
+        versionCode 11
+        versionName "1.0.1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
@@ -23,11 +23,11 @@ android {
           // Enables code shrinking, obfuscation, and optimization for only
           // your project's release build type. Make sure to use a build
           // variant with `debuggable false`.
-          minifyEnabled true
+          minifyEnabled false
 
           // Enables resource shrinking, which is performed by the
           // Android Gradle plugin.
-          shrinkResources true
+          shrinkResources false
 
           // Includes the default ProGuard rules files that are packaged with
           // the Android Gradle plugin. To learn more, go to the section about

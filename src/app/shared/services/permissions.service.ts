@@ -31,10 +31,10 @@ export class PermissionsService {
           this.checkAndroid(perms[idx]).then(res => { 
             this.permissionsStatus[idx].granted = res;
             if(idx == perms.length - 1) {
-              resolve(res);
+              resolve(true);
               return;
             } else {
-              return this._checkAll(perms, osType, idx + 1);
+              resolve(this._checkAll(perms, osType, idx + 1));
             }
           });
           break;
@@ -94,7 +94,6 @@ export class PermissionsService {
   checkAndroid(perm: string): Promise<boolean> {
     return new Promise((resolve) => {
       this.aPerm.checkPermission(perm).then(res => {
-        console.log("Has permission? ", res);
         resolve(res.hasPermission);
       });
     });
@@ -108,12 +107,12 @@ export class PermissionsService {
     });
   }
   requestAllAndroid(perms: string[]): Promise<{name: string, granted: boolean}[]> {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       this.aPerm.requestPermissions(perms).then(res => {
         this._checkAll(perms, 'android').then(res2 => {
           resolve(this.permissionsStatus);
-        })
-      });
+        }).catch(err => {reject(err)});
+      }).catch(err => {reject(err)});
     });
   }
 }

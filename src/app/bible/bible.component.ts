@@ -96,8 +96,12 @@ export class BibleComponent  implements OnInit {
         this.bibleHelper.checkAll().then(res => {
           resolve(true);
         }).catch(err => {
-          console.log("Helper error", err);
-          resolve(false);
+          if(this.deviceType == 'native') {
+            console.log("Helper error", err);
+            resolve(false);
+          } else {
+            resolve(true);
+          }
         });
       }
     });

@@ -36,8 +36,6 @@ export class BibleDownloadHelper {
 			this.buildAll();
 		}
 
-		
-
 		return new Promise((resolve, reject) => {
 			if(bookIdx >= BibleBooks.length) {
 				resolve(this.existing);
@@ -53,7 +51,7 @@ export class BibleDownloadHelper {
 				// book directory exists
 				// check if all chapters are downloaded
 				this.checkChapters(book).then(res => {
-					return this.checkAll(bookIdx + 1);
+					resolve(this.checkAll(bookIdx + 1));
 				});
 			}).catch(_ => {
 				// book directory does not exist
@@ -61,7 +59,7 @@ export class BibleDownloadHelper {
 					info.chapters[i].found = false;
 				}
 				info.status = 'incomplete';
-				return this.checkAll(bookIdx + 1);
+				resolve(this.checkAll(bookIdx + 1));
 			});
 		})
 	}
@@ -77,7 +75,7 @@ export class BibleDownloadHelper {
 				if(info) {
 					info.chapters[idx -1].found = true;
 				}
-				return this.checkChapters(book, idx + 1);
+				resolve(this.checkChapters(book, idx + 1));
 			}).catch(_ => {
 				// file does not exist
 				let info = this.existing.find(el => el.bookTitle == book.title);
@@ -85,7 +83,7 @@ export class BibleDownloadHelper {
 					info.chapters[idx -1].found = false;
 					info.status = 'incomplete';
 				}
-				return this.checkChapters(book, idx + 1);
+				resolve(this.checkChapters(book, idx + 1));
 			})
 		});
 	}

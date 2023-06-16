@@ -6,9 +6,6 @@ import { Media, MediaObject } from '@awesome-cordova-plugins/media/ngx';
 import { MediaSession } from '@jofr/capacitor-media-session';
 import { SoundEl } from '../../audio-controls/sound-el';
 
-import { BackgroundMode } from '@awesome-cordova-plugins/background-mode/ngx';
-import { ForegroundService } from '@awesome-cordova-plugins/foreground-service/ngx';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -31,12 +28,9 @@ export class SmartAudioService {
 
   constructor(private platform: Platform,
               private media: Media,
-              private file: File,
-              private bgMode: BackgroundMode,
-              private fgServ: ForegroundService) {
+              private file: File) {
     if(platform.is('cordova')){
       this.audioType = 'native';
-      this.bgMode.enable();
     }
   }
 

@@ -65,9 +65,6 @@ export class SmartAudioService {
       console.error("SmartAudio playing error", err);
     });
 
-    sound.status = "playing";
-    sound.mediaObj = file;
-
     if(this.active) {
       this.stop();
     }
@@ -75,11 +72,12 @@ export class SmartAudioService {
     file.play();
 
     this.setMediaSession(sound);
+
+    sound.status = "playing";
+    sound.mediaObj = file;
   }
   playWeb(sound: SoundEl) {
     let file: any = new Audio(sound.asset);
-    sound.status = "playing";
-    sound.mediaObj = file;
 
     sound.mediaObj = file;
     file.addEventListener('ended', () => {
@@ -102,6 +100,9 @@ export class SmartAudioService {
     }
     this.active = sound;
     file.play();
+    
+    sound.status = "playing";
+    sound.mediaObj = file;
   }
   playFile(context: any, id: string, folder: string, filename: string, audioName: string, callbacks?: {
     soundEnded?: (context: any, sound: SoundEl) => void,
